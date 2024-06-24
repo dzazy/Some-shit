@@ -16,11 +16,13 @@ As you can see, the standard 'cellranger count' command have four parameters:
     3.--sample : The sample name you named  用户命名样本名称  
     4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径  
 
-Genome and annotation folder structure (10X provided Human genome and annotation as an example):  
-基因组与注释文件(以10X做好的人类基因组和注释文件为例)文件夹结构：  
+Genome and annotation data (10X provided Human genome and annotation as an example):  
+基因组与注释文件(以10X做好的人类基因组和注释文件为例)：  
+
 Download reference data:  
-文件下载命令：  
+参考基因组与注释文件文件下载：  
 ~~~
 wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
 tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 ~~~
+
