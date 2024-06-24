@@ -12,9 +12,9 @@ As you can see, the standard 'cellranger count' command have four parameters:
 标准的‘cellranger count’命令包含以下四个参数：  
 
     1.--id : The project name you named  用户命名的项目名称  
-  2.--fastqs : The path of sequence fastq files  10X测序fastq文件路径    
-  3.--sample : The sample name you named  用户命名样本名称  
-  4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径  
+    2.--fastqs : The path of sequence fastq files  10X测序fastq文件路径    
+    3.--sample : The sample name you named  用户命名样本名称  
+    4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径  
 
 Genome and annotation folder structure (10X provided Human genome and annotation as an example)  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)文件夹结构：  
