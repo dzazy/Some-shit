@@ -2,12 +2,12 @@ This blogs describe the data we used for 10X genomics data analysis!
 本博客介绍10X genomics 数据分析中用到的文件
 
 The command line:(Reference website:https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-ct)
-```
+~~~
 cellranger count --id=run_count_1kpbmcs \
    --fastqs=/mnt/home/user.name/yard/run_cellranger_count/pbmc_1k_v3_fastqs \
    --sample=pbmc_1k_v3 \
    --transcriptome=/mnt/home/user.name/yard/run_cellranger_count/refdata-gex-GRCh38-2020-A
-```
+~~~
 As you can see, the standard 'cellranger count' command have four parameters:
 标准的‘cellranger count’命令包含以下四个参数：
   1.--id : The project name you named  用户命名的项目名称
