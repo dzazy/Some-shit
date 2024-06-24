@@ -18,4 +18,9 @@ As you can see, the standard 'cellranger count' command have four parameters:
 
 Genome and annotation folder structure (10X provided Human genome and annotation as an example):  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)文件夹结构：  
-
+Download reference data:  
+文件下载命令：  
+~~~
+wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
+tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
+~~~
