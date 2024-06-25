@@ -57,7 +57,8 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           └── transcriptInfo.tab        Transcript information file(First line is transcript number,second to final lines are transcript ensembl name,trans start position,trans stop position,Unknown,Unknown,exon number,exon order)
     4 directories, 20 files  
 ```
-Each file structure:  
+Each file structure:
+
       1.genome.fa:  
       The format of genome sequence fasta file is similar to:   
       >chr1 1
