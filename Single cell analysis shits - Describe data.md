@@ -61,7 +61,7 @@ Each file structure:
     1.genome.fa:  
     The format of genome sequence fasta file is similar to:  
     ```  
-    >chr1 1    
+    >chr1 1
     NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN  
     ```  
     ">chr1 1" is the name of chromosome 1;
