@@ -40,20 +40,20 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           └── genes.pickle  Unknown  
       ├── reference.json    Inpot data and pipeline version 参考序列与注释文件信息及所用软件版本与参数  
       └── star  
-           ├── Genome  
-           ├── SA  
-           ├── SAindex  
-           ├── chrLength.txt  
-           ├── chrName.txt  
-           ├── chrNameLength.txt  
-           ├── chrStart.txt  
-           ├── exonGeTrInfo.tab  
-           ├── exonInfo.tab  
-           ├── geneInfo.tab  
-           ├── genomeParameters.txt  
-           ├── sjdbInfo.txt  
-           ├── sjdbList.fromGTF.out.tab  
-           ├── sjdbList.out.tab  
-           └── transcriptInfo.tab  
+          ├── Genome  
+          ├── SA  
+          ├── SAindex  
+          ├── chrLength.txt  
+          ├── chrName.txt  
+          ├── chrNameLength.txt  
+          ├── chrStart.txt  
+          ├── exonGeTrInfo.tab  
+          ├── exonInfo.tab  
+          ├── geneInfo.tab  
+          ├── genomeParameters.txt  
+          ├── sjdbInfo.txt  
+          ├── sjdbList.fromGTF.out.tab  
+          ├── sjdbList.out.tab  
+          └── transcriptInfo.tab  
     4 directories, 20 files  
 ```
