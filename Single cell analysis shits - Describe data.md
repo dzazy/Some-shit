@@ -78,11 +78,11 @@ Each file structure:
       chr12   133275309       526471180       60      61  
       ...  
       The fasta fai file have 5 columns:  
-      1.sequence name(e.g. chr1 is the name of first sequence)  
-      2.sequence length(e.g. 248956422 is the length of chr1)
-      3.absolute first nucleotide position of each sequence(e.g. 8=7+1[include blank letter number of '>chr1 1'+newline break],253105714=8[length of '>chr1 1']+248956422[chr1 letter counts]+4149274[line counts of chr1]+10[length of '>chr10 10'])
-      4.nucleotide counts of each line in genome.fa file without blank(e.g. 60 is nucleotide counts of first line of chr1 sequence[without blank])
-      5.nucleotide counts of each line in genome.fa file with blank(e.g. 61 is nucleotide counts of first line of chr1 sequence[with blank])
+      1.Sequence name(e.g. chr1 is the name of first sequence)  
+      2.Sequence length(e.g. 248956422 is the length of chr1)
+      3.Absolute first nucleotide position of each sequence(e.g. 8=7+1[include blank letter number of '>chr1 1'+newline break],253105714=8[length of '>chr1 1']+248956422[chr1 letter counts]+4149274[line counts of chr1]+10[length of '>chr10 10'])
+      4.Nucleotide counts of each line in genome.fa file without blank(e.g. 60 is nucleotide counts of first line of chr1 sequence[without blank])
+      5.Nucleotide counts of each line in genome.fa file with blank(e.g. 61 is nucleotide counts of first line of chr1 sequence[with blank])
 
 3.genes.gtf:Genome annotation gtf format file
 
@@ -90,3 +90,14 @@ Each file structure:
       chr1    HAVANA  gene    29554   31109   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";  
       chr1    HAVANA  transcript      29554   31097   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; transcript_id "ENST00000473358"; transcript_version "1"; gene_type "lncRNA"; gene_name "MIR1302-2HG"; transcript_type "lncRNA"; transcript_name "MIR1302-2HG-202"; level 2; transcript_support_level "5"; hgnc_id "HGNC:52482"; tag "not_best_in_genome_evidence"; tag "dotter_confirmed"; tag "basic"; havana_gene "OTTHUMG00000000959.2"; havana_transcript "OTTHUMT00000002840.1";  
       chr1    HAVANA  exon    29554   30039   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; transcript_id "ENST00000473358"; transcript_version "1"; gene_type "lncRNA"; gene_name "MIR1302-2HG"; transcript_type "lncRNA";transcript_name "MIR1302-2HG-202"; exon_number 1; exon_id "ENSE00001947070"; exon_version "1"; level 2; transcript_support_level "5"; hgnc_id "HGNC:52482"; tag "not_best_in_genome_evidence"; tag "dotter_confirmed"; tag "basic"; havana_gene "OTTHUMG00000000959.2"; havana_transcript "OTTHUMT00000002840.1";  
+      ...  
+      The gtf file have 9 columns:
+      1.Chromosome name(e.g. chr1 is the name of chromosome 1)
+      2.Annotation source(e.g. HAVANA is an annotate team,HAVANA is HAVANA-Ensembl team)
+      3.Annotation type(e.g. gene is a type of annotation,include 'gene','transcript','exon','CDS','Selenocysteine','UTR','start_codon','stop_codon')
+          3.1 Gene-Gene
+          3.2 Transcript-Single or alternative spliced transcripts of each gene
+          3.3 exon-Sequence of DNA that is expressed (transcribed) into RNA and often translated into protein.
+          3.4 CDS-coding sequences
+          3.5 Selenocysteine-SELENON gene
+          3.6 UTR-Untranslated regions at top or bottom transcripts
