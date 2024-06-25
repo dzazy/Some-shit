@@ -30,12 +30,12 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 2.参考基因组与注释文件夹结构：
     refdata-gex-GRCh38-2020-A  
       ├── fasta  
-      │   ├── genome.fa     Genome sequence fasta format file 参考基因组序列  
-      │   └── genome.fa.fai Index of genome sequence fasta format file 参考基因组序列索引  
+          ├── genome.fa     Genome sequence fasta format file 参考基因组序列  
+          └── genome.fa.fai Index of genome sequence fasta format file 参考基因组序列索引  
       ├── genes  
-      │   └── genes.gtf     Genome annotation gtf format file 基因注释文件  
+          └── genes.gtf     Genome annotation gtf format file 基因注释文件  
       ├── pickle  
-      │   └── genes.pickle  Unknown  
+          └── genes.pickle  Unknown  
       ├── reference.json    Inpot data and pipeline version 参考序列与注释文件信息及所用软件版本与参数  
       └── star  
          ├── Genome  
