@@ -68,4 +68,13 @@ Each file structure:
       ">chr1 1" is the name of chromosome 1;
       "NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN" is sequence of chromosome 1,it contains some 'N' at top and bottom of sequence and four kinds of nucleotides(A,T,C,G) in the middle.  
       This file contains ordered chromosome '1,10-19,2,20-22,3-9,MT,X,Y' and 'KI...,GL...' sequence.  
+
+2.genome.fa.fai：  
+
+      The format of genome sequence fasta fai file is similar to:  
+      chr1    248956422       8               60      61  
+      chr10   133797422       253105714       60      61  
+      chr11   135086622       389133104       60      61  
+      chr12   133275309       526471180       60      61  
+      ...  
   
