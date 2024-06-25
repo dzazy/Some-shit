@@ -58,6 +58,7 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
     4 directories, 20 files  
 ```
 Each file structure:
+每个文件的结构如下：  
 
       1.genome.fa:  
       The format of genome sequence fasta file is similar to:   
