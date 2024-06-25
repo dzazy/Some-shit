@@ -101,3 +101,5 @@ Each file structure:
           3.4 CDS-coding sequences
           3.5 Selenocysteine-SELENON gene
           3.6 UTR-Untranslated regions at top or bottom transcripts
+          3.7 start_codon-Initiation signal for translation that is found on a mRNA strand
+          3.8 stop_codon-Single nucleotide triplet end protein synthesis
