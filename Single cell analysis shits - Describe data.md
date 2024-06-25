@@ -29,6 +29,7 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 
 2.Reference data folder structure:
 2.参考基因组与注释文件夹结构：
+```
     refdata-gex-GRCh38-2020-A  
       ├── fasta  
           ├── genome.fa     Genome sequence fasta format file 参考基因组序列  
@@ -55,3 +56,4 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
            ├── sjdbList.out.tab  
            └── transcriptInfo.tab  
     4 directories, 20 files  
+```
