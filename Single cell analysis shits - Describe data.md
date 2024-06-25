@@ -60,7 +60,7 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 Each file structure:  
 每个文件的结构如下：
 
-1.genome.fa:   
+1.genome.fa:Genome sequence fasta format file
 
       The format of genome sequence fasta file is similar to:   
       >chr1 1
@@ -69,7 +69,7 @@ Each file structure:
       "NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN" is sequence of chromosome 1,it contains some 'N' at top and bottom of sequence and four kinds of nucleotides(A,T,C,G) in the middle.  
       This file contains ordered chromosome '1,10-19,2,20-22,3-9,MT,X,Y' and 'KI...,GL...' sequence.  
 
-2.genome.fa.fai：  
+2.genome.fa.fai:Index of genome sequence fasta format file
 
       The format of genome sequence fasta fai file is similar to:  
       chr1    248956422       8               60      61  
@@ -81,3 +81,5 @@ Each file structure:
       1.sequence name(e.g. chr1 is the name of first sequence)  
       2.sequence length(e.g. 248956422 is the length of chr1)
       3.absolute first nucleotide position of each sequence(e.g. 8=7+1[include blank letter number of '>chr1 1'+newline break],253105714=8[length of '>chr1 1']+248956422[chr1 letter counts]+4149274[line counts of chr1]+10[length of '>chr10 10'])
+      4.nucleotide counts of each line in genome.fa file without blank(e.g. 60 is nucleotide counts of first line of chr1 sequence[without blank])
+      5.nucleotide counts of each line in genome.fa file with blank(e.g. 61 is nucleotide counts of first line of chr1 sequence[with blank])
