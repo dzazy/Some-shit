@@ -77,4 +77,7 @@ Each file structure:
       chr11   135086622       389133104       60      61  
       chr12   133275309       526471180       60      61  
       ...  
-  
+      The fasta fai file have 5 columns:  
+      1.sequence name(e.g. chr1 is the name of first sequence)  
+      2.sequence length(e.g. 248956422 is the length of chr1)
+      3.absolute first nucleotide position of each sequence(e.g. 8=7+1[include blank letter number of '>chr1 1'+newline break],253105714=8[length of '>chr1 1']+248956422[chr1 letter counts]+4149274[line counts of chr1]+10[length of '>chr10 10'])
