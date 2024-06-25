@@ -27,8 +27,8 @@ wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
 tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 ~~~
 
-2.Reference data folder structure:
-2.参考基因组与注释文件夹结构：
+2.Reference data folder structure:  
+2.参考基因组与注释文件夹结构：  
 ```
     refdata-gex-GRCh38-2020-A  
       ├── fasta  
