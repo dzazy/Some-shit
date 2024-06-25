@@ -47,9 +47,9 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           ├── chrName.txt               Every chromosomes name(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrNameLength.txt         Every chromosomes name and length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称和长度（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrStart.txt              Each chromosome start position(from 0 to final position)  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
-          ├── exonGeTrInfo.tab          Exon information file(First line is exons number,second to final lines are Exon strat position of gene,Exon stop position of gene)
-          ├── exonInfo.tab              Exon information file(First line is exons number,second to final lines are )
-          ├── geneInfo.tab  
+          ├── exonGeTrInfo.tab          Exon information file(First line is exon number,second to final lines are Exon strat position of gene,Exon stop position of gene,)
+          ├── exonInfo.tab              Exon information file(First line is exon number,second to final lines are Exon strat position of transcript,Exon stop position of transcript,)
+          ├── geneInfo.tab              Gene information file(First line is gene number,second to final lines are gene ensembl name)
           ├── genomeParameters.txt      STAR genomeGenerate mode command and parameters  STAR genomeGenerate模式的命令和参数
           ├── sjdbInfo.txt  
           ├── sjdbList.fromGTF.out.tab  
