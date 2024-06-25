@@ -39,8 +39,8 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
       ├── pickle  
           └── genes.pickle  Unknown  
       ├── reference.json    Inpot data and pipeline version 参考序列与注释文件信息及所用软件版本与参数  
-      └── star  
-          ├── Genome  
+      └── star              files for STAR software   
+          ├── Genome        
           ├── SA  
           ├── SAindex  
           ├── chrLength.txt  
