@@ -103,4 +103,6 @@ Each file structure:
           3.6 UTR-Untranslated regions at top or bottom transcripts
           3.7 start_codon-Initiation signal for translation that is found on a mRNA strand
           3.8 stop_codon-Single nucleotide triplet end protein synthesis
-      4.
+      4.Start position of row(e.g. 29554 is start position of gene ENSG00000243485)
+      5.End position of row(e.g. 31109 is stop position of gene ENSG00000243485)
+      6.
