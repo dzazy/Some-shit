@@ -39,18 +39,18 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
       ├── pickle  
           └── genes.pickle  Unknown  
       ├── reference.json    Inpot data and pipeline version 参考序列与注释文件信息及所用软件版本与参数  
-      └── star              files for STAR software   
-          ├── Genome        
-          ├── SA  
-          ├── SAindex  
-          ├── chrLength.txt  
-          ├── chrName.txt  
-          ├── chrNameLength.txt  
-          ├── chrStart.txt  
-          ├── exonGeTrInfo.tab  
-          ├── exonInfo.tab  
+      └── star              files for STAR software  数据比对软件STAR所需文件 
+          ├── Genome                    STAR builded Genome index file  STAR构建索引产出的Genome文件
+          ├── SA                        STAR builded SA file  STAR构建索引产出的SA文件
+          ├── SAindex                   STAR builded SA index file  STAR构建索引产出的SAindex文件
+          ├── chrLength.txt             Every chromosomes length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的长度（包括线粒体1-22,X,Y,线粒体及其他片段）  
+          ├── chrName.txt               Every chromosomes name(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称（包括线粒体1-22,X,Y,线粒体及其他片段）
+          ├── chrNameLength.txt         Every chromosomes name and length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称和长度（包括线粒体1-22,X,Y,线粒体及其他片段）
+          ├── chrStart.txt              Each chromosome start position(from 0 to final position)  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
+          ├── exonGeTrInfo.tab          Exon information file(First line is exons number,second to final lines are Exon strat position of gene,Exon stop position of gene)
+          ├── exonInfo.tab              Exon information file(First line is exons number,second to final lines are )
           ├── geneInfo.tab  
-          ├── genomeParameters.txt  
+          ├── genomeParameters.txt      STAR genomeGenerate mode command and parameters  STAR genomeGenerate模式的命令和参数
           ├── sjdbInfo.txt  
           ├── sjdbList.fromGTF.out.tab  
           ├── sjdbList.out.tab  
