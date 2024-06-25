@@ -59,9 +59,11 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 ```
 Each file structure:  
     1.genome.fa:  
-    The format of genome sequence fasta file is similar to:   
-        >chr1 1  
-        NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN  
+    The format of genome sequence fasta file is similar to:  
+    ~~~
+    >chr1 1  
+    NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN  
+    ~~~
     ">chr1 1" is the name of chromosome 1;
     "NNN...NNN...TGGCGCAGGC...TTAGGGTTAG...NNN...NNN" is sequence of chromosome 1,it contains some 'N' at top and bottom of sequence and four kinds of nucleotides(A,T,C,G) in the middle.  
     This file contains ordered chromosome '1,10-19,2,20-22,3-9,MT,X,Y' and 'KI...,GL...' sequence.  
