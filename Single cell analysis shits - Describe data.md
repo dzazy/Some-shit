@@ -19,10 +19,38 @@ As you can see, the standard 'cellranger count' command have four parameters:
 Genome and annotation data (10X provided Human genome and annotation as an example):  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)：  
 
-Download reference data:  
-参考基因组与注释文件文件下载：  
+1.Download reference data:  
+1.参考基因组与注释文件文件下载：  
 ~~~
 wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
 tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
 ~~~
 
+2.Reference data folder structure:
+2.参考基因组与注释文件夹结构：
+    refdata-gex-GRCh38-2020-A
+      ├── fasta
+      │   ├── genome.fa     Genome sequence fasta format file 参考基因组序列
+      │   └── genome.fa.fai Index of genome sequence fasta format file 参考基因组序列索引
+      ├── genes
+      │   └── genes.gtf     Genome annotation gtf format file 基因注释文件
+      ├── pickle
+      │   └── genes.pickle  Unknown
+      ├── reference.json    Inpot data and pipeline version 参考序列与注释文件信息及所用软件版本与参数
+      └── star
+         ├── Genome
+         ├── SA
+         ├── SAindex
+         ├── chrLength.txt
+         ├── chrName.txt
+         ├── chrNameLength.txt
+         ├── chrStart.txt
+         ├── exonGeTrInfo.tab
+         ├── exonInfo.tab
+         ├── geneInfo.tab
+         ├── genomeParameters.txt
+         ├── sjdbInfo.txt
+         ├── sjdbList.fromGTF.out.tab
+         ├── sjdbList.out.tab
+         └── transcriptInfo.tab
+    4 directories, 20 files
