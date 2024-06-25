@@ -94,7 +94,7 @@ Each file structure:
       The gtf file have 9 columns:
       1.Chromosome name(e.g. chr1 is the name of chromosome 1)
       2.Annotation source(e.g. HAVANA is an annotate team,HAVANA is HAVANA-Ensembl team)
-      3.Annotation type(e.g. gene is a type of annotation,include 'gene','transcript','exon','CDS','Selenocysteine','UTR','start_codon','stop_codon')
+      3.Annotation type(e.g. gene is a type of annotation,include 'gene','transcript','exon','CDS','Selenocysteine','UTR','start_codon','stop_codon',...)
           3.1 Gene-Gene
           3.2 Transcript-Single or alternative spliced transcripts of each gene
           3.3 exon-Sequence of DNA that is expressed (transcribed) into RNA and often translated into protein.
@@ -109,4 +109,6 @@ Each file structure:
       7.Strand(e.g. '+' is positive strand,'-' means reverse strand)
       8.Frame(e.g. usually replaced by '.',One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on.)
       9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";)
-          9.1
+          9.1 gene_id-Ensembl gene ID
+          9.2 gene_version-Gene version
+          9.3 gene_type-
