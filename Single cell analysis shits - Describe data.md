@@ -103,13 +103,18 @@ Each file structure:
           3.6 UTR-Untranslated regions at top or bottom transcripts
           3.7 start_codon-Initiation signal for translation that is found on a mRNA strand
           3.8 stop_codon-Single nucleotide triplet end protein synthesis
-      4.Start position of row(e.g. 29554 is start position of gene ENSG00000243485)
-      5.End position of row(e.g. 31109 is stop position of gene ENSG00000243485)
-      6.A floating point score(e.g. usually replaced by '.')
-      7.Strand(e.g. '+' is positive strand,'-' means reverse strand)
-      8.Frame(e.g. usually replaced by '.',One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on.)
+      4.Genomic start location(e.g. 29554 is start position of gene ENSG00000243485)
+      5.Genomic end location(e.g. 31109 is stop position of gene ENSG00000243485)
+      6.Score(not used)(e.g. usually replaced by '.')
+      7.Genomic Strand(e.g. '+' is positive strand,'-' means reverse strand)
+      8.Genomic phase(for CDS features)(e.g. usually replaced by '.',One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on.)
       9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";)
           9.1 gene_id-Ensembl gene ID
           9.2 gene_version-Gene version
-          9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding
+          9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding.ref website:https://www.gencodegenes.org/pages/biotypes.html
+          9.4 gene_name-Gene symbol name
+          9.5 level 2-Unknown
+          9.6 hgnc_id-HUGO gene nomenclature committee gene ID.ref website:https://www.genenames.org/
+          9.7 tag
+          
 
