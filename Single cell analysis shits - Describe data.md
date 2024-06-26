@@ -288,5 +288,15 @@ Each file structure:
       2.STAR genomeGenerate mode parameters
 
 18.sjdbInfo.txt:
+
+      The format of sjdbInfo.txt file is similar to:
+      362117  100
+      30039   30562   1       1       0       1
+      30667   30974   1       2       0       1
+      35174   35275   2       2       0       2
+      35481   35719   2       0       5       2
+      65433   65518   1       3       0       1
+      ...
+      The first line is 
       
 
