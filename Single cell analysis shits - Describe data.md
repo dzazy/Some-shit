@@ -157,6 +157,10 @@ Each file structure:
       Software uses 2 threads.
       The reference version is '2020-A'.
 
+6.Genome:STAR builded Genome index file  
+7.SA:STAR builded SA file  
+8.SAindex:STAR builded SA index file  
+
 
           
 
