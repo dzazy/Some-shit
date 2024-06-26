@@ -212,11 +212,25 @@ Each file structure:
       30975   31108   1       0       1
       ...
       The first line is exon number
-      second to final lines have 5 columns
+      second to final lines have 5 columns:
       1.Exon strat position(gtf genomic start location-1)
       2.Exon stop position(gtf genomic stop location-1)
       3.Exon strand('1' is positive strand,'2' is reverse strand)
       4.Gene number contains the exon(e.g.'29553 30038 1 0 0' the forth column '0' represent gene0-ENSG00000243485;'34553 35173 2 1 2' the forth column '1' represent gene1-ENSG00000237613)
       5.Transcript number contains the exon(e.g.'29553 30038 1 0 0' the fifth column '0' represent transcript0-ENST00000473358;'30266 30666 1 0 1' the fifth column '1' represent transcript0-ENST00000469289)
 
-14.
+14.exonInfo.tab:Exon information file
+
+      The format of exonInfo.tab file is similar to:
+      1305354
+      0       485     0
+      1010    1113    486
+      1422    1543    590
+      0       400     0
+      709     842     401
+      ...
+      The first line is exon number
+      second to final lines have 3 columns:
+      1.Exon start position - Transcript start position(e.g. '0' represents exon ENSE00001947070 start position(29554)-transcript ENST00000473358 start position(29554);'1010' represent exon ENSE00001922571 start position(30564)-transcript ENST00000473358 start position(29554))
+      2.Exon end position - Transcript start position(e.g. '485' represents exon ENSE00001947070 end position(30039)-transcript ENST00000473358 start position(29554);'1113' represent exon ENSE00001922571 end position(30667)-transcript ENST00000473358 start position(29554))
+
