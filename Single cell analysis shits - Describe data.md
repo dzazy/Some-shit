@@ -131,7 +131,7 @@ Each file structure:
 4.genes.pickle:A binary file-Unknown  
 5.reference.json:Inpot data and pipeline version json file
 
-      The format of reference.json file is:
+      The reference.json file is:
       {
           "fasta_hash": "b6f131840f9f337e7b858c3d1e89d7ce0321b243",
           "genomes": [
