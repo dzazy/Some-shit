@@ -1,4 +1,4 @@
-
+![image](https://github.com/dzazy/Some-shit/assets/45283502/8f87a94d-698a-47b1-8034-b41ab6e71d24)
 This blogs describe the data we used for 10X genomics data analysis!  
 本博客介绍10X genomics 数据分析中用到的文件  
 
@@ -47,7 +47,7 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           ├── chrName.txt               Every chromosomes name(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrNameLength.txt         Every chromosomes name and length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称和长度（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrStart.txt              Each chromosome start position(from 0 to final position)  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
-          ├── exonGeTrInfo.tab          Exon information file(First line is exon number,second to final lines are Exon strat position of gene,Exon stop position of gene,last 3 columns Unknown)
+          ├── exonGeTrInfo.tab          Exon information file
           ├── exonInfo.tab              Exon information file(First line is exon number,second to final lines Unknown)
           ├── geneInfo.tab              Gene information file(First line is gene number,second to final lines are gene ensembl name)  基因信息文件（第一行是总基因数目，第二行至最后是基因ensembl名称）
           ├── genomeParameters.txt      STAR genomeGenerate mode command and parameters  STAR genomeGenerate模式的命令和参数
@@ -199,6 +199,24 @@ Each file structure:
       382992384
       ...
       The chrStart.txt file have 1 columns:
-      1.Chromosome start position(from 0 to final position)  
+      1.Chromosome start position(from 0 to final position)[How to calculate it is unknown]  
 
-13.
+13.exonGeTrInfo.tab:Exon information file
+
+      The format of exonGeTrInfo.tab file is similar to:
+      1305354
+      29553   30038   1       0       0
+      30266   30666   1       0       1
+      30563   30666   1       0       0
+      30975   31096   1       0       0
+      30975   31108   1       0       1
+      ...
+      The first line is exon number
+      second to final lines have 5 columns
+      1.Exon strat position(gtf genomic start location-1)
+      2.Exon stop position(gtf genomic stop location-1)
+      3.Exon strand('1' is positive strand,'2' is reverse strand)
+      4.Gene number contains the exon(e.g.'29553 30038 1 0 0' the forth column '0' represent gene0-ENSG00000243485;'34553 35173 2 1 2' the forth column '1' represent gene1-ENSG00000237613)
+      5.Transcript number contains the exon(e.g.'29553 30038 1 0 0' the fifth column '0' represent transcript0-ENST00000473358;'30266 30666 1 0 1' the fifth column '1' represent transcript0-ENST00000469289)
+
+14.
