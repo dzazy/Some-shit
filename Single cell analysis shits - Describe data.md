@@ -233,4 +233,5 @@ Each file structure:
       second to final lines have 3 columns:
       1.Exon start position - Transcript start position(e.g. '0' represents exon ENSE00001947070 start position(29554)-transcript ENST00000473358 start position(29554);'1010' represent exon ENSE00001922571 start position(30564)-transcript ENST00000473358 start position(29554))
       2.Exon end position - Transcript start position(e.g. '485' represents exon ENSE00001947070 end position(30039)-transcript ENST00000473358 start position(29554);'1113' represent exon ENSE00001922571 end position(30667)-transcript ENST00000473358 start position(29554))
+      3.Exon-1 length(e.g. '0' represent '486-486';'486' represent '485-0+1';590 represent '486+1113-1010+1')
 
