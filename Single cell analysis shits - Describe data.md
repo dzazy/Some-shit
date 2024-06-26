@@ -111,4 +111,5 @@ Each file structure:
       9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";)
           9.1 gene_id-Ensembl gene ID
           9.2 gene_version-Gene version
-          9.3 gene_type-Gene type of each feature,include 
+          9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding
+
