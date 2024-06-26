@@ -191,5 +191,14 @@ Each file structure:
       1.Chromosome name(e.g. chr1 is name of chromosome 1)
       2.Nucleotide counts of chromosome(e.g. 248956422 is nucleotide counts of chromosome 1)   
 
-12.chrStart.txt:
+12.chrStart.txt:Chromosome start position
 
+      The format of chrStart.txt file is similar to:
+      0
+      249036800
+      382992384
+      ...
+      The chrStart.txt file have 1 columns:
+      1.Chromosome start position(from 0 to final position)  
+
+13.
