@@ -128,5 +128,28 @@ Each file structure:
           9.17 exon_version-Exon version
           9.18 ccdsid-offical CCDS ID
 
+4.genes.pickle:A binary file-Unknown  
+5.reference.json:Inpot data and pipeline version json file
+
+      The format of reference.json file is:
+      {
+          "fasta_hash": "b6f131840f9f337e7b858c3d1e89d7ce0321b243",
+          "genomes": [
+              "GRCh38"
+          ],
+          "gtf_hash": "78ce95ffc520688283c4fe050a27b25b2f45b605",
+          "input_fasta_files": [
+              "Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified"
+          ],
+          "input_gtf_files": [
+              "gencode.v32.primary_assembly.annotation.gtf.filtered"
+          ],
+          "mem_gb": 16,
+          "mkref_version": "4.0.0",
+          "threads": 2,
+          "version": "2020-A"
+      }
+
+
           
 
