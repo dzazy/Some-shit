@@ -48,13 +48,13 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           ├── chrNameLength.txt         Every chromosomes name and length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称和长度（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrStart.txt              Each chromosome start position(from 0 to final position)  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
           ├── exonGeTrInfo.tab          Exon information file
-          ├── exonInfo.tab              Exon information file(First line is exon number,second to final lines Unknown)
-          ├── geneInfo.tab              Gene information file(First line is gene number,second to final lines are gene ensembl name)  基因信息文件（第一行是总基因数目，第二行至最后是基因ensembl名称）
+          ├── exonInfo.tab              Exon information file
+          ├── geneInfo.tab              Gene information file  基因信息文件
           ├── genomeParameters.txt      STAR genomeGenerate mode command and parameters  STAR genomeGenerate模式的命令和参数
           ├── sjdbInfo.txt  
           ├── sjdbList.fromGTF.out.tab  
           ├── sjdbList.out.tab  
-          └── transcriptInfo.tab        Transcript information file(First line is transcript number,second to final lines are transcript ensembl name,trans start position,trans stop position,Unknown,Unknown,exon number,exon order)
+          └── transcriptInfo.tab        Transcript information file
     4 directories, 20 files  
 ```
 Each file structure:  
@@ -234,4 +234,60 @@ Each file structure:
       1.Exon start position - Transcript start position(e.g. '0' represents exon ENSE00001947070 start position(29554)-transcript ENST00000473358 start position(29554);'1010' represent exon ENSE00001922571 start position(30564)-transcript ENST00000473358 start position(29554))
       2.Exon end position - Transcript start position(e.g. '485' represents exon ENSE00001947070 end position(30039)-transcript ENST00000473358 start position(29554);'1113' represent exon ENSE00001922571 end position(30667)-transcript ENST00000473358 start position(29554))
       3.Exon-1 length(e.g. '0' represent '486-486';'486' represent '485-0+1';590 represent '486+1113-1010+1')
+
+15.geneInfo.tab:Gene information file
+
+      The format of geneInfo.tab file is similar to:
+      36601
+      ENSG00000243485
+      ENSG00000237613
+      ENSG00000186092
+      ENSG00000238009
+      ENSG00000239945
+      ...
+      The first line is gene number
+      second to final lines are gene ensembl ID
+
+16.transcriptInfo.tab:Transcript information file
+
+      The format of transcriptInfo.tab file is similar to:
+      199138
+      ENST00000473358 29553   31096   31096   1       3       0
+      ENST00000469289 30266   31108   31096   1       2       3
+      ENST00000417324 34553   36080   31108   2       3       5
+      ENST00000461467 35244   36072   36080   2       2       8
+      ENST00000641515 65418   71584   36080   1       3       10
+      ...
+      The first line is transcript number
+      second to final lines have 7 columns:
+      1.Transcript ensembl ID
+      2.Transcript start position(e.g. 29553 is [start position of transcript ENSG00000243485]-1)
+      3.Transcript end position(e.g. 31096 is [end position of transcript ENSG00000243485]-1)
+      4.
+      5.Transcript strand('1' is positive strand,'2' is reverse strand)
+      6.exon number(e.g. '3' is exon number of ENST00000473358)
+      7.exon accumulate order(e.g. '0' is blank exon number;'3' is ENST00000473358 exon number;'5' is ENST00000473358 and ENST00000469289 sum number 5=3+2)
+
+17.genomeParameters.txt:STAR genomeGenerate mode command and parameters file
+
+      The content of genomeParameters.txt is:
+      ### STAR --runMode genomeGenerate --runThreadN 1 --genomeDir /mnt/scratch2/spaceranger/references/GRCh38/star --genomeFastaFiles /mnt/scratch2/spaceranger/references/GRCh38/fasta/genome.fa --genomeSAindexNbases 14 --genomeChrBinNbits 18 --genomeSAsparseD 3 --limitGenomeGenerateRAM 17179869184 --sjdbGTFfile /mnt/scratch2/spaceranger/references/GRCh38/genes/genes.gtf
+      versionGenome   20201
+      genomeFastaFiles        /mnt/scratch2/spaceranger/references/GRCh38/fasta/genome.fa
+      genomeSAindexNbases     14
+      genomeChrBinNbits       18
+      genomeSAsparseD 3
+      sjdbOverhang    100
+      sjdbFileChrStartEnd     -
+      sjdbGTFfile     /mnt/scratch2/spaceranger/references/GRCh38/genes/genes.gtf
+      sjdbGTFchrPrefix        -
+      sjdbGTFfeatureExon      exon
+      sjdbGTFtagExonParentTranscript  transcript_id
+      sjdbGTFtagExonParentGene        gene_id
+      sjdbInsertSave  Basic
+      1.STAR genomeGenerate mode command
+      2.STAR genomeGenerate mode parameters
+
+18.
+      
 
