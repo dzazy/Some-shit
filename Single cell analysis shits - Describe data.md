@@ -1,4 +1,3 @@
-![image](https://github.com/dzazy/Some-shit/assets/45283502/8f87a94d-698a-47b1-8034-b41ab6e71d24)
 This blogs describe the data we used for 10X genomics data analysis!  
 本博客介绍10X genomics 数据分析中用到的文件  
 
