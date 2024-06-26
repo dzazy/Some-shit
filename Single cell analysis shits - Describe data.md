@@ -288,6 +288,6 @@ Each file structure:
       1.STAR genomeGenerate mode command
       2.STAR genomeGenerate mode parameters
 
-18.
+18.sjdbInfo.txt:
       
 
