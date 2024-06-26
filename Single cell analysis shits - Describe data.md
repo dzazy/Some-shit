@@ -126,6 +126,7 @@ Each file structure:
           9.15 exon_number-exon position in the transcript from its 5' end
           9.16 exon_id-Ensembl exon ID
           9.17 exon_version-Exon version
+          9.18 ccdsid-offical CCDS ID
 
           
 
