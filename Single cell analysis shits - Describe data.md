@@ -131,7 +131,7 @@ Each file structure:
 4.genes.pickle:A binary file-Unknown  
 5.reference.json:Inpot data and pipeline version json file
 
-      The reference.json file is:
+      The reference.json file is a json format file:
       {
           "fasta_hash": "b6f131840f9f337e7b858c3d1e89d7ce0321b243",
           "genomes": [
@@ -149,6 +149,13 @@ Each file structure:
           "threads": 2,
           "version": "2020-A"
       }
+      The genome version is 'GRCh38'
+      Genome file is Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified,it is modified from 'Homo_sapiens.GRCh38.dna.primary_assembly.fa' file.
+      Annotation file is gencode.v32.primary_assembly.annotation.gtf.filtered,it is filtered from 'gencode.v32.primary_assembly.annotation.gtf',Because 10X library is poly A+ RNA library,the annotation file only retains lncRNA,protein coding,IG and TR features,remove other features like miRNA,snRNA... .
+      Software uses 16GB memory.
+      mkref software version is '4.0.0'.
+      Software uses 2 threads.
+      The reference version is '2020-A'.
 
 
           
