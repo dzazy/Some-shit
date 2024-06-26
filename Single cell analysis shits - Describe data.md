@@ -111,10 +111,21 @@ Each file structure:
       9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";)
           9.1 gene_id-Ensembl gene ID
           9.2 gene_version-Gene version
-          9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding.ref website:https://www.gencodegenes.org/pages/biotypes.html
+          9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding.(ref website:https://www.gencodegenes.org/pages/biotypes.html)
           9.4 gene_name-Gene symbol name
-          9.5 level 2-Unknown
+          9.5 level 2-1 (verified loci),2 (manually annotated loci),3 (automatically annotated loci)
           9.6 hgnc_id-HUGO gene nomenclature committee gene ID.ref website:https://www.genenames.org/
-          9.7 tag
+          9.7 tag-Tag(ref website:https://www.gencodegenes.org/pages/tags.html)
+          9.8 havana_gene-Gene id in the HAVANA db
+          9.9 transcript_id-Ensembl transcript ID
+          9.10 transcript_version-Transcript version
+          9.11 transcript_type-Transcript type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TEC,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,misc_RNA,non_stop_decay,nonsense_mediated_decay,processed_pseudogene,protein_coding,pseudogene,retained_intron,transcribed_unitary_pseudogene,transcribed_unprocessed_pseudogene.(ref website:https://www.gencodegenes.org/pages/biotypes.html)
+          9.12 transcript_name-Transcript symbol name
+          9.13 transcript_support_level-transcripts are scored according to how well mRNA and EST alignments match over its full length:1 (all splice junctions of the transcript are supported by at least one non-suspect mRNA),2 (the best supporting mRNA is flagged as suspect or the support is from multiple ESTs),3 (the only support is from a single EST),4 (the best supporting EST is flagged as suspect),5 (no single transcript supports the model structure),NA (the transcript was not analyzed)
+          9.14 havana_transcript-Transcript id in the HAVANA db
+          9.15 exon_number-exon position in the transcript from its 5' end
+          9.16 exon_id-Ensembl exon ID
+          9.17 exon_version-Exon version
+
           
 
