@@ -157,10 +157,39 @@ Each file structure:
       Software uses 2 threads.
       The reference version is '2020-A'.
 
-6.Genome:STAR builded Genome index file  
-7.SA:STAR builded SA file  
-8.SAindex:STAR builded SA index file  
+6.Genome:STAR builded Genome index file-binary file  
+7.SA:STAR builded SA file-binary file  
+8.SAindex:STAR builded SA index file-binary file   
+9.chrLength.txt:Chromosomes length file  
 
+      The format of chrLength.txt file is similar to:
+      248956422
+      133797422
+      135086622
+      ...
+      The chrLength.txt file have 1 columns:
+      1.Nucleotide counts of chromosome(e.g. 248956422 is nucleotide counts of chromosome 1)
 
-          
+10.chrName.txt:Chromosomes name file
+
+      The format of chrName.txt file is similar to:
+      chr1
+      chr10
+      chr11
+      ...
+      The chrName.txt file have 1 columns:
+      1.Chromosome name(e.g. chr1 is name of chromosome 1)  
+
+11.chrNameLength.txt:Chromosomes name and length file
+
+      The format of chrNameLength.txt file is similar to:
+      chr1    248956422
+      chr10   133797422
+      chr11   135086622
+      ...
+      The chrNameLength.txt file have 2 columns:
+      1.Chromosome name(e.g. chr1 is name of chromosome 1)
+      2.Nucleotide counts of chromosome(e.g. 248956422 is nucleotide counts of chromosome 1)   
+
+12.chrStart.txt:
 
