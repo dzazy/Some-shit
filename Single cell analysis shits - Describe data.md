@@ -2,7 +2,7 @@
 This blogs describe the data we used for 10X genomics data analysis!  
 本博客介绍10X genomics 数据分析中用到的文件  
 
-The command line:(Reference website : https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-ct)  
+The command line:(ref website : https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-ct)  
 ~~~
 cellranger count --id=run_count_1kpbmcs \
    --fastqs=/mnt/home/user.name/yard/run_cellranger_count/pbmc_1k_v3_fastqs \
