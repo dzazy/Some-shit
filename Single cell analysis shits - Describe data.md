@@ -1,5 +1,5 @@
-This blogs describe the data we used for 10X genomics data analysis!  
-本博客介绍10X genomics 数据分析中用到的文件  
+This blogs describe the data we used for count mode of 10X genomics software cellranger !  
+本博客介绍10X genomics cellranger count模式用到的文件 ！  
 
 The command line:(ref website : https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-ct)  
 ~~~
