@@ -67,7 +67,7 @@ Sequence structure of different read type file:
       R2:NACAAAGTCCCCCCCATAATACAGGGGGAGCCACTTGGGCAGGAGGCAGGGAGGGGTCCATTCCCCCTGGTGGGGCTGGTGGGGAGCTGTA
       I1 has 8 letters,R1 has 28 letters and R2 has 91 letters
       'I1' is sample index sequence
-      'R1' is 10bp barcode and 16 bp UMI sequence
+      'R1' is 12bp barcode and 16 bp UMI sequence
       'R2' is transcript sequence
       Third lines are same
       Forth lines are quality score
