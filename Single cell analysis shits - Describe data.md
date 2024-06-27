@@ -38,7 +38,41 @@ The size of this dataset is 5.17G and takes a few minutes to download.
 The file name is [Sample Name]_S1_L00[Lane Number] _[Read Type]_001.fastq.gz,it includes 3 parts:(ref website:https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/inputs/cr-specifying-fastqs)  
 [Sample_Name] is sample name(e.g.'pbmc_1k_v3' is sample name)  
 [Lane Number] is sequence lane number(e.g. '1' is lane 1)  
-[Read Type] is read type of sequence(e.g.'I1' and 'I2' are Sample index read (optional);'R1' and 'R2' are Read 1 and Read 2 in paired-end sequence)  
+[Read Type] is read type of sequence(e.g.'I1' and 'I2' are Sample index read (optional);'R1' and 'R2' are Read 1 and Read 2)  
+
+fastq file structure:
+
+      The format of fastq file is similar to:
+      @A00228:279:HFWFVDMXX:1:1101:8486:1000 2:N:0:NCATTACT
+      NACAAAGTCCCCCCCATAATACAGGGGGAGCCACTTGGGCAGGAGGCAGGGAGGGGTCCATTCCCCCTGGTGGGGCTGGTGGGGAGCTGTA
+      +
+      #FFFFFFFFFFFFFFF:FFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFF
+      The first line is name of sequence(e.g.'@A00228:279:HFWFVDMXX:1:1101:8486:1000 2:N:0:NCATTACT' is sequence name,it begins with a '@' character and follows sequence identifer and optional description.)
+      The second line is sequence
+      The third line begin with a '+' character and sometimes followed by the same sequence name
+      The forth line is the quality values for the sequence,it must contains the same number of letters with line 2
+
+Sequence structure of different read type file:
+
+      First line:
+      I1:@A00228:279:HFWFVDMXX:1:1101:8486:1000 1:N:0:NCATTACT
+      R1:@A00228:279:HFWFVDMXX:1:1101:8486:1000 1:N:0:NCATTACT
+      R2:@A00228:279:HFWFVDMXX:1:1101:8486:1000 2:N:0:NCATTACT
+      I1 and R1 sequence have same sequence names
+      R2 sequence name is a little different,it is '2:N:0',I1 and R1 are '1:N:0'
+      Second line:
+      I1:NCATTACT
+      R1:NGTGATTAGCTGTACTCGTATGTAAGGT
+      R2:NACAAAGTCCCCCCCATAATACAGGGGGAGCCACTTGGGCAGGAGGCAGGGAGGGGTCCATTCCCCCTGGTGGGGCTGGTGGGGAGCTGTA
+      I1 has 8 letters,R1 has 28 letters and R2 has 91 letters
+      'I1' is sample index sequence
+      'R1' is 10bp barcode and 16 bp UMI sequence
+      'R2' is transcript sequence
+      Third lines are same
+      Forth lines are quality score
+
+
+      
 
 Genome and annotation data (10X provided Human genome and annotation as an example):  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)：  
