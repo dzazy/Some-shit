@@ -262,7 +262,7 @@ Each file structure:
       1.Transcript ensembl ID
       2.Transcript start position(e.g. 29553 is [start position of transcript ENSG00000243485]-1)
       3.Transcript end position(e.g. 31096 is [end position of transcript ENSG00000243485]-1)
-      4.The max gene end position(e.g. first and second number is 31096,the third number is max(31096,31108)=31108,the forth number is max(31108,36080)=36080)
+      4.The max gene end position(e.g. first number is max(0,31096)=31096,the second number is max(31096,31096)=31096,the third number is max(31096,31108)=31108,the forth number is max(31108,36080)=36080)
       5.Transcript strand('1' is positive strand,'2' is reverse strand)
       6.exon number(e.g. '3' is exon number of ENST00000473358)
       7.exon accumulate order(e.g. '0' is blank exon number;'3' is ENST00000473358 exon number;'5' is ENST00000473358 and ENST00000469289 sum number 5=3+2)
