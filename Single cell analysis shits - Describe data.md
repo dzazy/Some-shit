@@ -35,7 +35,10 @@ The size of this dataset is 5.17G and takes a few minutes to download.
       └── pbmc_1k_v3_S1_L002_R2_001.fastq.gz
     0 directories, 6 files
 ```
-
+The file name is [Sample Name]_S1_L00[Lane Number] _[Read Type]_001.fastq.gz,it includes 3 parts:(ref website:https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/inputs/cr-specifying-fastqs)
+[Sample_Name] is sample name(e.g.'pbmc_1k_v3' is sample name)
+[Lane Number] is sequence lane number(e.g. '1' is lane 1)
+[Read Type] is read type of sequence(e.g.'I1' and 'I2' are Sample index read (optional);'R1' and 'R2' are Read 1 and Read 2 in paired-end sequence)
 
 Genome and annotation data (10X provided Human genome and annotation as an example):  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)：  
