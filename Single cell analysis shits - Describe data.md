@@ -287,7 +287,7 @@ Each file structure:
       1.STAR genomeGenerate mode command
       2.STAR genomeGenerate mode parameters
 
-18.sjdbInfo.txt:
+18.sjdbInfo.txt:Splice junction information file
 
       The format of sjdbInfo.txt file is similar to:
       362117  100
@@ -297,6 +297,29 @@ Each file structure:
       35481   35719   2       0       5       2
       65433   65518   1       3       0       1
       ...
-      The first line is 
+      The first line contains two number:
+      1.sj number
+      2.sjdbOverhang parameter number('100' is sjdbOverhang number)
+      second to final lines have 6 columns:
+      1.Intron start position(gtf genomic start location,e.g. 30039 is start of intron-1)
+      2.Intron end position(gtf genomic stop location,e.g. 30562 is stop of intron-1)
+      3.
+      4.
+      5.
+      6.Strand('1' is positive strand,'2' is reverse strand)
+
+19.sjdbList.fromGTF.out.tab:Splice junction information file
+
+      chr1    30040   30563   +       1
+      chr1    30668   30975   +       1
+      chr1    35175   35276   -       2
+      chr1    35482   35720   -       2
+      chr1    65434   65519   +       3
+      The sjdbList.fromGTF.out.tab file contains 5 columns:
+      1.Chromosome name(e.g. chr1 is the name of chromosome 1)
+      2.Intron start position(gtf genomic start location,e.g. 30040 is start of intron)
+      3.Intron end position(gtf genomic stop location,e.g. 30563 is stop of intron)
+      4.Strand('+' is positive strand,'-' is reverse strand)
+
       
 
