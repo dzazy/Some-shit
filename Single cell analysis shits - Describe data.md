@@ -14,7 +14,8 @@ As you can see, the standard 'cellranger count' command have four parameters:
     1.--id : The project name you named  用户命名的项目名称  
     2.--fastqs : The path of 10X single cell sequence fastq files  10X测序单细胞fastq文件路径    
     3.--sample : The sample name you named  用户命名样本名称  
-    4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径  
+    4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径 
+    
 Sequence fastq data(10X provided 1,000 PBMC data set as an example):
 
 1.Download 10X single cell sequence fastq files
