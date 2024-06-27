@@ -12,9 +12,30 @@ As you can see, the standard 'cellranger count' command have four parameters:
 标准的‘cellranger count’命令包含以下四个参数：  
 
     1.--id : The project name you named  用户命名的项目名称  
-    2.--fastqs : The path of sequence fastq files  10X测序fastq文件路径    
+    2.--fastqs : The path of 10X single cell sequence fastq files  10X测序单细胞fastq文件路径    
     3.--sample : The sample name you named  用户命名样本名称  
     4.--transcriptome : The path of genome and annotation files  基因组与注释文件路径  
+Sequence fastq data(10X provided 1,000 PBMC data set as an example):
+
+1.Download 10X single cell sequence fastq files
+~~~
+wget https://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v3/pbmc_1k_v3_fastqs.tar
+tar -xvf pbmc_1k_v3_fastqs.tar
+~~~
+The size of this dataset is 5.17G and takes a few minutes to download.
+
+2.10X single cell sequence fastq folder structure:
+```
+    pbmc_1k_v3_fastqs
+      ├── pbmc_1k_v3_S1_L001_I1_001.fastq.gz
+      ├── pbmc_1k_v3_S1_L001_R1_001.fastq.gz
+      ├── pbmc_1k_v3_S1_L001_R2_001.fastq.gz
+      ├── pbmc_1k_v3_S1_L002_I1_001.fastq.gz
+      ├── pbmc_1k_v3_S1_L002_R1_001.fastq.gz
+      └── pbmc_1k_v3_S1_L002_R2_001.fastq.gz
+    0 directories, 6 files
+```
+
 
 Genome and annotation data (10X provided Human genome and annotation as an example):  
 基因组与注释文件(以10X做好的人类基因组和注释文件为例)：  
