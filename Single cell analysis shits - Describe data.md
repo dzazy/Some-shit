@@ -50,9 +50,9 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           ├── exonInfo.tab              Exon information file
           ├── geneInfo.tab              Gene information file  基因信息文件
           ├── genomeParameters.txt      STAR genomeGenerate mode command and parameters  STAR genomeGenerate模式的命令和参数
-          ├── sjdbInfo.txt  
-          ├── sjdbList.fromGTF.out.tab  
-          ├── sjdbList.out.tab  
+          ├── sjdbInfo.txt              Splice junction information file
+          ├── sjdbList.fromGTF.out.tab  Splice junction information file
+          ├── sjdbList.out.tab          Splice junction information file
           └── transcriptInfo.tab        Transcript information file
     4 directories, 20 files  
 ```
