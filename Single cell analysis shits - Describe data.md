@@ -45,7 +45,7 @@ tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
           ├── chrLength.txt             Every chromosomes length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的长度（包括线粒体1-22,X,Y,线粒体及其他片段）  
           ├── chrName.txt               Every chromosomes name(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称（包括线粒体1-22,X,Y,线粒体及其他片段）
           ├── chrNameLength.txt         Every chromosomes name and length(chr1-chr22,X,Y,Mitochondrion and other small parts)  文件中含有每一条线粒体的名称和长度（包括线粒体1-22,X,Y,线粒体及其他片段）
-          ├── chrStart.txt              Each chromosome start position(from 0 to final position)  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
+          ├── chrStart.txt              Each chromosome start position  文件中含有每一条染色体在基因组fasta文件中开始的字符的绝对位置
           ├── exonGeTrInfo.tab          Exon information file
           ├── exonInfo.tab              Exon information file
           ├── geneInfo.tab              Gene information file  基因信息文件
