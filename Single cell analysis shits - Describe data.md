@@ -3,10 +3,13 @@ This blogs describe the data we used for count mode of 10X genomics software cel
 
 The command line:(ref website : https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-ct)  
 ~~~
-cellranger count --id=run_count_1kpbmcs \
-   --fastqs=/mnt/home/user.name/yard/run_cellranger_count/pbmc_1k_v3_fastqs \
-   --sample=pbmc_1k_v3 \
-   --transcriptome=/mnt/home/user.name/yard/run_cellranger_count/refdata-gex-GRCh38-2024-A
+cellranger count --id run_count_1kpbmcs \
+   --fastqs /mnt/home/user.name/yard/run_cellranger_count/pbmc_1k_v3_fastqs \
+   --sample pbmc_1k_v3 \
+   --transcriptome /mnt/home/user.name/yard/run_cellranger_count/refdata-gex-GRCh38-2024-A \
+   --create-bam true \
+   --localcores 16 \
+   --localmem 100
 ~~~
 As you can see, the standard 'cellranger count' command have four parameters:  
 标准的‘cellranger count’命令包含以下四个参数：  
