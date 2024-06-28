@@ -189,31 +189,31 @@ Each file structure:
 4.genes.pickle:A binary file-Unknown  
 5.reference.json:Inpot data and pipeline version json file
 
-      The reference.json file is a json format file:
-      {
-          "fasta_hash": "b6f131840f9f337e7b858c3d1e89d7ce0321b243",
-          "genomes": [
-              "GRCh38"
-          ],
-          "gtf_hash": "78ce95ffc520688283c4fe050a27b25b2f45b605",
-          "input_fasta_files": [
-              "Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified"
-          ],
-          "input_gtf_files": [
-              "gencode.v32.primary_assembly.annotation.gtf.filtered"
-          ],
-          "mem_gb": 16,
-          "mkref_version": "4.0.0",
-          "threads": 2,
-          "version": "2020-A"
-      }
+    {
+       "fasta_hash": "b6f131840f9f337e7b858c3d1e89d7ce0321b243",
+       "genomes": [
+           "GRCh38"
+       ],
+       "gtf_hash.gz": "432db3ab308171ef215fac5dc4ca40096099a4c6",
+       "input_fasta_files": [
+          "Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified"
+       ],
+       "input_gtf_files": [
+          "gencode.v44.primary_assembly.annotation.gtf.filtered"
+       ],
+       "mem_gb": 16,
+       "mkref_version": "8.0.0",
+       "threads": 2,
+       "version": "2024-A"
+    }
+
       The genome version is 'GRCh38'
       Genome file is Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified,it is modified from 'Homo_sapiens.GRCh38.dna.primary_assembly.fa' file.
-      Annotation file is gencode.v32.primary_assembly.annotation.gtf.filtered,it is filtered from 'gencode.v32.primary_assembly.annotation.gtf',Because 10X library is poly A+ RNA library,the annotation file only retains lncRNA,protein coding,IG and TR features,remove other features like miRNA,snRNA... .
+      Annotation file is gencode.v44.primary_assembly.annotation.gtf.filtered,it is filtered from 'gencode.v44.primary_assembly.annotation.gtf',Because 10X library is poly A+ RNA library,the annotation file only retains lncRNA,protein coding,IG and TR features,remove other features like miRNA,snRNA... .
       Software uses 16GB memory.
-      mkref software version is '4.0.0'.
+      mkref software version is '8.0.0'.
       Software uses 2 threads.
-      The reference version is '2020-A'.
+      The reference version is '2024-A'.
 
 6.Genome:STAR builded Genome index file-binary file  
 7.SA:STAR builded SA file-binary file  
@@ -262,62 +262,65 @@ Each file structure:
 13.exonGeTrInfo.tab:Exon information file
 
       The format of exonGeTrInfo.tab file is similar to:
-      1305354
-      29553   30038   1       0       0
-      30266   30666   1       0       1
-      30563   30666   1       0       0
-      30975   31096   1       0       0
-      30975   31108   1       0       1
+      1586950
+      11868   12226   1       0       0
+      12612   12720   1       0       0
+      13220   14408   1       0       0
+      29553   30038   1       1       1
+      30266   30666   1       1       2
       ...
       The first line is exon number
       second to final lines have 5 columns:
       1.Exon strat position(gtf genomic start location-1)
       2.Exon stop position(gtf genomic stop location-1)
       3.Exon strand('1' is positive strand,'2' is reverse strand)
-      4.Gene number contains the exon(e.g.'29553 30038 1 0 0' the forth column '0' represent gene0-ENSG00000243485;'34553 35173 2 1 2' the forth column '1' represent gene1-ENSG00000237613)
-      5.Transcript number contains the exon(e.g.'29553 30038 1 0 0' the fifth column '0' represent transcript0-ENST00000473358;'30266 30666 1 0 1' the fifth column '1' represent transcript0-ENST00000469289)
+      4.Gene number contains the exon(e.g.'11868 12226 1 0 0' the forth column '0' represent gene0-ENSG00000290825;'29553 30038 1 1 1' the forth column '1' represent gene1-ENSG00000243485)
+      5.Transcript number contains the exon(e.g.'11868 12226 1 0 0' the fifth column '0' represent transcript0-ENST00000456328;'29553 30038 1 1 1' the fifth column '1' represent transcript1-ENST00000473358)
 
 14.exonInfo.tab:Exon information file
 
       The format of exonInfo.tab file is similar to:
-      1305354
+      1586950
+      0       358     0
+      744     852     359
+      1352    2540    468
       0       485     0
       1010    1113    486
-      1422    1543    590
-      0       400     0
-      709     842     401
       ...
       The first line is exon number
       second to final lines have 3 columns:
-      1.Exon start position - Transcript start position(e.g. '0' represents exon ENSE00001947070 start position(29554)-transcript ENST00000473358 start position(29554);'1010' represent exon ENSE00001922571 start position(30564)-transcript ENST00000473358 start position(29554))
-      2.Exon end position - Transcript start position(e.g. '485' represents exon ENSE00001947070 end position(30039)-transcript ENST00000473358 start position(29554);'1113' represent exon ENSE00001922571 end position(30667)-transcript ENST00000473358 start position(29554))
-      3.Exon-1 length(e.g. '0' represent '486-486';'486' represent '485-0+1';590 represent '486+1113-1010+1')
+      1.Exon start position - Transcript start position(e.g. '0' represents exon ENSE00002234944 start position(11868)-transcript ENST00000456328 start position(11868);'1010' represent exon ENSE00001922571 start position(30564)-transcript ENST00000473358 start position(29554))
+      2.Exon end position - Transcript start position(e.g. '358' represents exon ENSE00002234944 end position(30039)-transcript ENST00000456328 start position(29554);'1113' represent exon ENSE00001922571 end position(30667)-transcript ENST00000473358 start position(29554))
+      3.Exon-1 length(e.g. '0' represent '358-358';'486' represent '485-0+1')
 
 15.geneInfo.tab:Gene information file
 
       The format of geneInfo.tab file is similar to:
-      36601
-      ENSG00000243485
-      ENSG00000237613
-      ENSG00000186092
-      ENSG00000238009
-      ENSG00000239945
+      38606
+      ENSG00000290825 DDX11L2 lncRNA
+      ENSG00000243485 MIR1302-2HG     lncRNA
+      ENSG00000237613 FAM138A lncRNA
+      ENSG00000290826 ENSG00000290826 lncRNA
+      ENSG00000186092 OR4F5   protein_coding
       ...
       The first line is gene number
-      second to final lines are gene ensembl ID
+      second to final lines have 3 columns
+      1.Gene ensembl ID
+      2.Gene symbol name
+      3.Gene type(e.g.'lncRNA gene','protein coding gene')
 
 16.transcriptInfo.tab:Transcript information file
 
       The format of transcriptInfo.tab file is similar to:
-      199138
-      ENST00000473358 29553   31096   31096   1       3       0
-      ENST00000469289 30266   31108   31096   1       2       3
-      ENST00000417324 34553   36080   31108   2       3       5
-      ENST00000461467 35244   36072   36080   2       2       8
-      ENST00000641515 65418   71584   36080   1       3       10
+      226005
+      ENST00000456328 11868   14408   14408   1       3       0       0
+      ENST00000473358 29553   31096   14408   1       3       3       1
+      ENST00000469289 30266   31108   31096   1       2       6       1
+      ENST00000417324 34553   36080   31108   2       3       8       2
+      ENST00000461467 35244   36072   36080   2       2       11      2
       ...
       The first line is transcript number
-      second to final lines have 7 columns:
+      second to final lines have 8 columns:
       1.Transcript ensembl ID
       2.Transcript start position(e.g. 29553 is [start position of transcript ENSG00000243485]-1)
       3.Transcript end position(e.g. 31096 is [end position of transcript ENSG00000243485]-1)
@@ -325,24 +328,27 @@ Each file structure:
       5.Transcript strand('1' is positive strand,'2' is reverse strand)
       6.exon number(e.g. '3' is exon number of ENST00000473358)
       7.exon accumulate order(e.g. '0' is blank exon number;'3' is ENST00000473358 exon number;'5' is ENST00000473358 and ENST00000469289 sum number 5=3+2)
+      8.gene order(e.g.'ENST00000456328' belongs to gene0-ENSG00000290825,'ENST00000473358' and 'ENST00000469289' belong to gene1-ENSG00000243485)
 
 17.genomeParameters.txt:STAR genomeGenerate mode command and parameters file
 
       The content of genomeParameters.txt is:
-      ### STAR --runMode genomeGenerate --runThreadN 1 --genomeDir /mnt/scratch2/spaceranger/references/GRCh38/star --genomeFastaFiles /mnt/scratch2/spaceranger/references/GRCh38/fasta/genome.fa --genomeSAindexNbases 14 --genomeChrBinNbits 18 --genomeSAsparseD 3 --limitGenomeGenerateRAM 17179869184 --sjdbGTFfile /mnt/scratch2/spaceranger/references/GRCh38/genes/genes.gtf
-      versionGenome   20201
-      genomeFastaFiles        /mnt/scratch2/spaceranger/references/GRCh38/fasta/genome.fa
+      ### /mnt/yard/madhumati.gundapunen/cellranger-8.0.0/lib/bin/STAR --runMode genomeGenerate --runThreadN 16 --genomeDir /mnt/home/ian.fiddes/yard/update_references/redo/mkref_GRCh38/MAKE_REFERENCE/_MAKE_REFERENCE/fork0/join-u2bd2ea44d7/files/reference/star --genomeFastaFiles /mnt/home/ian.fiddes/yard/update_references/redo/mkref_GRCh38/MAKE_REFERENCE/_MAKE_REFERENCE/fork0/join-u2bd2ea44d7/files/reference/fasta/genome.fa --genomeSAindexNbases 14 --genomeChrBinNbits 18 --genomeSAsparseD 3 --limitGenomeGenerateRAM 17179869184 --sjdbGTFfile /mnt/home/ian.fiddes/yard/update_references/redo/mkref_GRCh38/MAKE_REFERENCE/_MAKE_REFERENCE/fork0/join-u2bd2ea44d7/files/reference/genes/genes.gtf
+      ### GstrandBit 32
+      versionGenome   2.7.1a
+      genomeFastaFiles        /mnt/home/ian.fiddes/yard/update_references/redo/mkref_GRCh38/MAKE_REFERENCE/_MAKE_REFERENCE/fork0/join-u2bd2ea44d7/files/reference/fasta/genome.fa
       genomeSAindexNbases     14
       genomeChrBinNbits       18
       genomeSAsparseD 3
       sjdbOverhang    100
       sjdbFileChrStartEnd     -
-      sjdbGTFfile     /mnt/scratch2/spaceranger/references/GRCh38/genes/genes.gtf
+      sjdbGTFfile     /mnt/home/ian.fiddes/yard/update_references/redo/mkref_GRCh38/MAKE_REFERENCE/_MAKE_REFERENCE/fork0/join-u2bd2ea44d7/files/reference/genes/genes.gtf
       sjdbGTFchrPrefix        -
       sjdbGTFfeatureExon      exon
       sjdbGTFtagExonParentTranscript  transcript_id
       sjdbGTFtagExonParentGene        gene_id
       sjdbInsertSave  Basic
+      genomeFileSizes 3216071051 8738781846
       1.STAR genomeGenerate mode command
       2.STAR genomeGenerate mode parameters
 
