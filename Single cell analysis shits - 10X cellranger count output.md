@@ -128,6 +128,7 @@ Each file or folder structure:
       Gene Expression   AL627309.3  ENSG00000239945 0                   0
       ...
 
+
       barcodes.tsv.gz:Barcode sequences correspond to column indices:
       
       AAACCCAAGAAACCCA-1
@@ -138,6 +139,7 @@ Each file or folder structure:
       ...
       barcodes file has 1 column
       1.Droplet barcode sequence,each barcode sequence includes a suffix with a dash separator followed by a number(e.g.'AAACCCAAGAAACCCA-1' is barcode of one droplet)
+
 
       features.tsv.gz:Features correspond to row indices
 
@@ -151,6 +153,7 @@ Each file or folder structure:
       1.Gene ensembl name(e.g.'ENSG00000290825',it corresponds to gene_id in the annotation field of the reference GTF)
       2.Gene symbol name(e.g.'DDX11L2',corresponds to gene_name in the annotation field of the reference GTF,if gene_name is omit,corresponds to gene_id)
       3.Type of feature(e.g.'Gene Expression',it can be one of 'Gene Expression','Antibody Capture','CRISPR Guide Capture','Multiplexing Capture','CUSTOM')
+
 
       matrix.mtx.gz:Expression matrix data
       
