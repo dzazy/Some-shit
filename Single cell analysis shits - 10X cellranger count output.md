@@ -115,5 +115,30 @@ The result folder is 'run_count_1kpbmcs/outs'
 
       31 directories, 41 files
 
+Each file or folder structure:
+1.raw_feature_bc_matrix and filtered_feature_bc_matrix folder:single cell raw and filtered matrix
+
+      Each folder contains 3 files:barcodes.tsv.gz,features.tsv.gz,matrix.mtx.gz,three files can represent one big matrix like:
+      feature_type     gene         feature_id      AAACCCAAGGAGAGTA-1  AAACGCTTCAGCCCAG-1  ...
+      Gene Expression  MIR1302-2HG  ENSG00000243485 0                   0
+      Gene Expression      FAM138A  ENSG00000237613 0                   0
+      Gene Expression        OR4F5  ENSG00000186092 0                   0
+      Gene Expression   AL627309.1  ENSG00000238009 0                   0
+      Gene Expression   AL627309.3  ENSG00000239945 0                   0
+      ...
+
+      barcodes.tsv.gz
+      AAACCCAAGAAACCCA-1
+      AAACCCAAGAAACTCA-1
+      AAACCCAAGAAATTCG-1
+      AAACCCAAGAACTGAT-1
+      AAACCCAAGAAGAAAC-1
+      ...
+      barcodes file has 1 column
+      1.Droplet barcodes(e.g.'AAACCCAAGAAACCCA-1' is barcode of one droplet)
+
+
+
+
 
 
