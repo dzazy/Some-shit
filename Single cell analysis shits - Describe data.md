@@ -6,7 +6,7 @@ The command line:(ref website : https://www.10xgenomics.com/support/software/cel
 cellranger count --id=run_count_1kpbmcs \
    --fastqs=/mnt/home/user.name/yard/run_cellranger_count/pbmc_1k_v3_fastqs \
    --sample=pbmc_1k_v3 \
-   --transcriptome=/mnt/home/user.name/yard/run_cellranger_count/refdata-gex-GRCh38-2020-A
+   --transcriptome=/mnt/home/user.name/yard/run_cellranger_count/refdata-gex-GRCh38-2024-A
 ~~~
 As you can see, the standard 'cellranger count' command have four parameters:  
 标准的‘cellranger count’命令包含以下四个参数：  
@@ -81,8 +81,8 @@ Genome and annotation data (10X provided Human genome and annotation as an examp
 1.Download reference data:  
 1.参考基因组与注释文件文件下载：  
 ~~~
-wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
-tar -zxvf refdata-gex-GRCh38-2020-A.tar.gz
+wget "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2024-A.tar.gz"
+tar -zxvf refdata-gex-GRCh38-2024-A.tar.gz
 ~~~
 
 2.Reference data folder structure:  
@@ -145,9 +145,9 @@ Each file structure:
 3.genes.gtf:Genome annotation gtf format file(ref website:https://www.gencodegenes.org/pages/data_format.html)
 
       The format of genome annotation gtf format file is similar to:
-      chr1    HAVANA  gene    29554   31109   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";  
-      chr1    HAVANA  transcript      29554   31097   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; transcript_id "ENST00000473358"; transcript_version "1"; gene_type "lncRNA"; gene_name "MIR1302-2HG"; transcript_type "lncRNA"; transcript_name "MIR1302-2HG-202"; level 2; transcript_support_level "5"; hgnc_id "HGNC:52482"; tag "not_best_in_genome_evidence"; tag "dotter_confirmed"; tag "basic"; havana_gene "OTTHUMG00000000959.2"; havana_transcript "OTTHUMT00000002840.1";  
-      chr1    HAVANA  exon    29554   30039   .       +       .       gene_id "ENSG00000243485"; gene_version "5"; transcript_id "ENST00000473358"; transcript_version "1"; gene_type "lncRNA"; gene_name "MIR1302-2HG"; transcript_type "lncRNA";transcript_name "MIR1302-2HG-202"; exon_number 1; exon_id "ENSE00001947070"; exon_version "1"; level 2; transcript_support_level "5"; hgnc_id "HGNC:52482"; tag "not_best_in_genome_evidence"; tag "dotter_confirmed"; tag "basic"; havana_gene "OTTHUMG00000000959.2"; havana_transcript "OTTHUMT00000002840.1";  
+      chr1    HAVANA  gene    11869   14409   .       +       .       gene_id "ENSG00000290825"; gene_version "1"; gene_type "lncRNA"; gene_name "DDX11L2"; level 2; tag "overlaps_pseudogene";
+      chr1    HAVANA  transcript      11869   14409   .       +       .       gene_id "ENSG00000290825"; gene_version "1"; transcript_id "ENST00000456328"; transcript_version "2"; gene_type "lncRNA"; gene_name "DDX11L2"; transcript_type "lncRNA"; transcript_name "DDX11L2-202"; level 2; transcript_support_level "1"; tag "basic"; tag "Ensembl_canonical"; havana_transcript "OTTHUMT00000362751.1";
+      chr1    HAVANA  exon    11869   12227   .       +       .       gene_id "ENSG00000290825"; gene_version "1"; transcript_id "ENST00000456328"; transcript_version "2"; gene_type "lncRNA"; gene_name "DDX11L2"; transcript_type "lncRNA"; transcript_name "DDX11L2-202"; exon_number 1; exon_id "ENSE00002234944"; exon_version "1"; level 2; transcript_support_level "1"; tag "basic"; tag "Ensembl_canonical"; havana_transcript "OTTHUMT00000362751.1";
       ...  
       The gtf file have 9 columns:
       1.Chromosome name(e.g. chr1 is the name of chromosome 1)
@@ -161,12 +161,12 @@ Each file structure:
           3.6 UTR-Untranslated regions at top or bottom transcripts
           3.7 start_codon-Initiation signal for translation that is found on a mRNA strand
           3.8 stop_codon-Single nucleotide triplet end protein synthesis
-      4.Genomic start location(e.g. 29554 is start position of gene ENSG00000243485)
-      5.Genomic end location(e.g. 31109 is stop position of gene ENSG00000243485)
+      4.Genomic start location(e.g. 11869 is start position of gene ENSG00000290825)
+      5.Genomic end location(e.g. 14409 is stop position of gene ENSG00000290825)
       6.Score(not used)(e.g. usually replaced by '.')
       7.Genomic Strand(e.g. '+' is positive strand,'-' means reverse strand)
       8.Genomic phase(for CDS features)(e.g. usually replaced by '.',One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on.)
-      9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000243485"; gene_version "5"; gene_type"lncRNA"; gene_name "MIR1302-2HG"; level 2; hgnc_id "HGNC:52482"; tag "ncRNA_host"; havana_gene "OTTHUMG00000000959.2";)
+      9.Additional information attributes(Semicolon-separated list of tag-value pairs. e.g. gene_id "ENSG00000290825"; gene_version "1"; gene_type "lncRNA"; gene_name "DDX11L2"; level 2; tag "overlaps_pseudogene";)
           9.1 gene_id-Ensembl gene ID
           9.2 gene_version-Gene version
           9.3 gene_type-Gene type of each feature,include IG_C_gene,IG_C_pseudogene,IG_D_gene,IG_J_gene,IG_J_pseudogene,IG_V_gene,IG_V_pseudogene,TR_C_gene,TR_D_gene,TR_J_gene,TR_J_pseudogene,TR_V_gene,TR_V_pseudogene,lncRNA,protein_coding.(ref website:https://www.gencodegenes.org/pages/biotypes.html)
