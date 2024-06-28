@@ -127,7 +127,8 @@ Each file or folder structure:
       Gene Expression   AL627309.3  ENSG00000239945 0                   0
       ...
 
-      barcodes.tsv.gz
+      barcodes.tsv.gz:Barcode sequences correspond to column indices:
+      
       AAACCCAAGAAACCCA-1
       AAACCCAAGAAACTCA-1
       AAACCCAAGAAATTCG-1
@@ -135,7 +136,7 @@ Each file or folder structure:
       AAACCCAAGAAGAAAC-1
       ...
       barcodes file has 1 column
-      1.Droplet barcodes(e.g.'AAACCCAAGAAACCCA-1' is barcode of one droplet)
+      1.Droplet barcode sequence(e.g.'AAACCCAAGAAACCCA-1' is barcode of one droplet)
 
 
 
