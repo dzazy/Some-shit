@@ -113,7 +113,7 @@ The result folder is 'run_count_1kpbmcs/outs'
          ├── raw_feature_bc_matrix.h5
          └── web_summary.html
 
-31 directories, 41 files
+      31 directories, 41 files
 
 
 
