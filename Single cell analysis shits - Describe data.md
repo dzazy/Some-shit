@@ -355,19 +355,19 @@ Each file structure:
 18.sjdbInfo.txt:Splice junction information file
 
       The format of sjdbInfo.txt file is similar to:
-      362117  100
+      386483  100
+      12227   12611   1       0       2       1
+      12721   13219   1       2       1       1
       30039   30562   1       1       0       1
       30667   30974   1       2       0       1
       35174   35275   2       2       0       2
-      35481   35719   2       0       5       2
-      65433   65518   1       3       0       1
       ...
       The first line contains two number:
       1.sj number
       2.sjdbOverhang parameter number('100' is sjdbOverhang number)
       second to final lines have 6 columns:
-      1.Intron start position(gtf genomic start location,e.g. 30039 is start of intron-1)
-      2.Intron end position(gtf genomic stop location,e.g. 30562 is stop of intron-1)
+      1.Intron start position(gtf genomic start location,e.g. 12227 is start of intron-1)
+      2.Intron end position(gtf genomic stop location,e.g. 12611 is stop of intron-1)
       3.
       4.
       5.
@@ -375,31 +375,32 @@ Each file structure:
 
 19.sjdbList.fromGTF.out.tab:Splice junction information file
 
-      chr1    30040   30563   +       1
-      chr1    30668   30975   +       1
-      chr1    35175   35276   -       2
-      chr1    35482   35720   -       2
-      chr1    65434   65519   +       3
+      The format of sjdbList.fromGTF.out.tab file is similar to:
+      chr1    12228   12612   +       1
+      chr1    12722   13220   +       1
+      chr1    30040   30563   +       2
+      chr1    30668   30975   +       2
+      chr1    35175   35276   -       3
       ...
       The sjdbList.fromGTF.out.tab file contains 5 columns:
       1.Chromosome name(e.g. chr1 is the name of chromosome 1)
-      2.Intron start position(gtf genomic start location,e.g. 30040 is start of intron)
-      3.Intron end position(gtf genomic stop location,e.g. 30563 is stop of intron)
+      2.Intron start position(gtf genomic start location,e.g. 12228 is start of intron)
+      3.Intron end position(gtf genomic stop location,e.g. 12612 is stop of intron)
       4.Strand('+' is positive strand,'-' is reverse strand)
       5.Transcript order contains the junction(e.g.The first and second lines belong to the first transcript,the third and forth lines belong to the second transcript)
 
 20.sjdbList.out.tab:Splice junction information file
 
+      chr1    12228   12612   +
+      chr1    12722   13220   +
       chr1    30040   30563   +
       chr1    30668   30975   +
       chr1    35175   35276   -
-      chr1    35482   35720   -
-      chr1    65434   65519   +
       ...
       The sjdbList.out.tab file contains 4 columns:
       1.Chromosome name(e.g. chr1 is the name of chromosome 1)
-      2.Intron start position(gtf genomic start location,e.g. 30040 is start of intron)
-      3.Intron end position(gtf genomic stop location,e.g. 30563 is stop of intron)
+      2.Intron start position(gtf genomic start location,e.g. 12228 is start of intron)
+      3.Intron end position(gtf genomic stop location,e.g. 12612 is stop of intron)
       4.Strand('+' is positive strand,'-' is reverse strand)
 
 
