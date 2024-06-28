@@ -119,6 +119,7 @@ Each file or folder structure:
 1.raw_feature_bc_matrix and filtered_feature_bc_matrix folder:single cell raw and filtered matrix
 
       Each folder contains 3 files:barcodes.tsv.gz,features.tsv.gz,matrix.mtx.gz,three files can represent one big matrix like:
+      
       feature_type     gene         feature_id      AAACCCAAGGAGAGTA-1  AAACGCTTCAGCCCAG-1  ...
       Gene Expression  MIR1302-2HG  ENSG00000243485 0                   0
       Gene Expression      FAM138A  ENSG00000237613 0                   0
