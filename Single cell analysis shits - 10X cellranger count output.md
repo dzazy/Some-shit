@@ -130,7 +130,7 @@ Each file or folder structure:
 
 
       barcodes.tsv.gz:Barcode sequences correspond to column indices:
-      
+      The format of barcodes.tsv.gz file is similar to:
       AAACCCAAGAAACCCA-1
       AAACCCAAGAAACTCA-1
       AAACCCAAGAAATTCG-1
@@ -140,9 +140,8 @@ Each file or folder structure:
       barcodes file has 1 column
       1.Droplet barcode sequence,each barcode sequence includes a suffix with a dash separator followed by a number(e.g.'AAACCCAAGAAACCCA-1' is barcode of one droplet)
 
-
       features.tsv.gz:Features correspond to row indices
-
+      The format of features.tsv.gz file is similar to:
       ENSG00000290825 DDX11L2         Gene Expression
       ENSG00000243485 MIR1302-2HG     Gene Expression
       ENSG00000237613 FAM138A         Gene Expression
@@ -156,6 +155,7 @@ Each file or folder structure:
 
 
       matrix.mtx.gz:Expression matrix data
+      The format of matrix.mtx.gz file is similar to:
       
 
 
