@@ -204,7 +204,7 @@ ENSG00000238009                  .                  .                  .        
 
 [1]  38606 340411
 
-'.' means this position is '0'
+note:'.' means this position is '0'
 ~~~
 
       
