@@ -118,7 +118,7 @@ The result folder is 'run_count_1kpbmcs/outs'
 Each file or folder structure:
 1.raw_feature_bc_matrix and filtered_feature_bc_matrix folder:single cell raw and filtered matrix
 
-      Each folder contains 3 files:barcodes.tsv.gz,features.tsv.gz,matrix.mtx.gz,three files can represent one big matrix like:
+      Each folder contains 3 files:barcodes.tsv.gz,features.tsv.gz,matrix.mtx.gz,three files can represent one big MEX matrix like:
       
       feature_type     gene         feature_id      AAACCCAAGGAGAGTA-1  AAACGCTTCAGCCCAG-1  ...
       Gene Expression  MIR1302-2HG  ENSG00000243485 0                   0
@@ -153,9 +153,41 @@ Each file or folder structure:
       2.Gene symbol name(e.g.'DDX11L2',corresponds to gene_name in the annotation field of the reference GTF,if gene_name is omit,corresponds to gene_id)
       3.Type of feature(e.g.'Gene Expression',it can be one of 'Gene Expression','Antibody Capture','CRISPR Guide Capture','Multiplexing Capture','CUSTOM')
 
-
       matrix.mtx.gz:Expression matrix data
       The format of matrix.mtx.gz file is similar to:
+      %%MatrixMarket matrix coordinate integer general
+      %metadata_json: {"software_version": "Cell Ranger cellranger-8.0.1", "format_version": 2}
+      38606 340411 5370658
+      2057 2 1
+      4622 2 1
+      ...
+      The first and second lines are information of data and software
+      Third line is the number of rwos,columns and matrix data number except '0'
+      Forth to last lines have 3 columns:
+      1.row index
+      2.column index
+      3.data
+      (e.g.'2057 2 1' means '1' is at '2057' row,'2' column of matrix)
+
+We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix
+~~~{R}
+library(Matrix)
+
+matrix_dir = "/opt/sample345/outs/filtered_feature_bc_matrix/"
+barcode.path <- paste0(matrix_dir, "barcodes.tsv.gz")
+features.path <- paste0(matrix_dir, "features.tsv.gz")
+matrix.path <- paste0(matrix_dir, "matrix.mtx.gz")
+mat <- readMM(file = matrix.path)
+feature.names = read.delim(features.path,
+                           header = FALSE,
+                           stringsAsFactors = FALSE)
+barcode.names = read.delim(barcode.path,
+                           header = FALSE,
+                           stringsAsFactors = FALSE)
+colnames(mat) = barcode.names$V1
+rownames(mat) = feature.names$V1
+~~~
+
       
 
 
