@@ -194,20 +194,13 @@ print(dim(mat)) #the dimsions of data
 output is :
 ~~~
 6 x 6 sparse Matrix of class "dgTMatrix"
-                AAACCCAAGAAACCCA-1 AAACCCAAGAAACTCA-1 AAACCCAAGAAATTCG-1
-ENSG00000290825                  .                  .                  .
-ENSG00000243485                  .                  .                  .
-ENSG00000237613                  .                  .                  .
-ENSG00000290826                  .                  .                  .
-ENSG00000186092                  .                  .                  .
-ENSG00000238009                  .                  .                  .
-                AAACCCAAGAACTGAT-1 AAACCCAAGAAGAAAC-1 AAACCCAAGAAGAGTA-1
-ENSG00000290825                  .                  .                  .
-ENSG00000243485                  .                  .                  .
-ENSG00000237613                  .                  .                  .
-ENSG00000290826                  .                  .                  .
-ENSG00000186092                  .                  .                  .
-ENSG00000238009                  .                  .                  .
+                AAACCCAAGAAACCCA-1 AAACCCAAGAAACTCA-1 AAACCCAAGAAATTCG-1 AAACCCAAGAACTGAT-1 AAACCCAAGAAGAAAC-1 AAACCCAAGAAGAGTA-1
+ENSG00000290825                  .                  .                  .                  .                  .                  .
+ENSG00000243485                  .                  .                  .                  .                  .                  .
+ENSG00000237613                  .                  .                  .                  .                  .                  .
+ENSG00000290826                  .                  .                  .                  .                  .                  .
+ENSG00000186092                  .                  .                  .                  .                  .                  .
+ENSG00000238009                  .                  .                  .                  .                  .                  .
 
 [1]  38606 340411
 
