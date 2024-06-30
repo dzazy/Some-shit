@@ -170,7 +170,7 @@ Each file or folder structure:
       (e.g.'2057 2 1' means '1' is at '2057' row,'2' column of matrix)
 
 We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix.  
-Firstly,we use R to read matrix
+Firstly,we use R to read matrix:
 ~~~{R}
 library(Matrix)
 
@@ -206,6 +206,23 @@ print(dim(mat)) #the dimsions of data
 note:'.' means this position is '0'
 ~~~
 
+Second,we use python to read the matrix:
+~~~{python}
+#need to install pandas by using 'pip install pandas'
+import pandas as pd
+ 
+# transform table to pandas dataframe and label rows and columns
+matrix = pd.DataFrame.sparse.from_spmatrix(mat)
+matrix.columns = barcodes
+matrix.insert(loc=0, column="feature_id", value=feature_ids)
+matrix.insert(loc=0, column="gene", value=gene_names)
+matrix.insert(loc=0, column="feature_type", value=feature_types)
+ 
+# display matrix
+print(matrix)
+# save the table as a CSV (note the CSV will be a very large file)
+matrix.to_csv("mex_matrix.csv", index=False)
+~~~
       
 
 
