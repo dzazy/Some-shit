@@ -169,7 +169,7 @@ Each file or folder structure:
       3.data
       (e.g.'2057 2 1' means '1' is at '2057' row,'2' column of matrix)
 
-We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix
+We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix.  
 Firstly,we use R to read matrix
 ~~~{R}
 library(Matrix)
