@@ -174,7 +174,7 @@ Firstly,we use R to read matrix
 ~~~{R}
 library(Matrix)
 
-matrix_dir = "your path to folder"
+matrix_dir = "./raw_feature_bc_matrix/"
 barcode.path <- paste0(matrix_dir, "barcodes.tsv.gz")
 features.path <- paste0(matrix_dir, "features.tsv.gz")
 matrix.path <- paste0(matrix_dir, "matrix.mtx.gz")
