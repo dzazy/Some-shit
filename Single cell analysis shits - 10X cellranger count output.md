@@ -187,12 +187,11 @@ barcode.names = read.delim(barcode.path,
                            stringsAsFactors = FALSE)
 colnames(mat) = barcode.names$V1
 rownames(mat) = feature.names$V1
-print(mat[1:6,1:6]) #show top 6 rows and 6 columns data
-print(dim(mat)) #the dimsions of data
 ~~~
 
 output is :
-~~~
+~~~{R}
+print(mat[1:6,1:6]) #show top 6 rows and 6 columns data
 6 x 6 sparse Matrix of class "dgTMatrix"
                 AAACCCAAGAAACCCA-1 AAACCCAAGAAACTCA-1 AAACCCAAGAAATTCG-1 AAACCCAAGAACTGAT-1 AAACCCAAGAAGAAAC-1 AAACCCAAGAAGAGTA-1
 ENSG00000290825                  .                  .                  .                  .                  .                  .
@@ -201,7 +200,7 @@ ENSG00000237613                  .                  .                  .        
 ENSG00000290826                  .                  .                  .                  .                  .                  .
 ENSG00000186092                  .                  .                  .                  .                  .                  .
 ENSG00000238009                  .                  .                  .                  .                  .                  .
-
+print(dim(mat)) #the dimsions of data
 [1]  38606 340411
 
 note:'.' means this position is '0'
