@@ -170,10 +170,11 @@ Each file or folder structure:
       (e.g.'2057 2 1' means '1' is at '2057' row,'2' column of matrix)
 
 We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix
+Firstly,we use R to read matrix
 ~~~{R}
 library(Matrix)
 
-matrix_dir = "/opt/sample345/outs/filtered_feature_bc_matrix/"
+matrix_dir = "your path to folder"
 barcode.path <- paste0(matrix_dir, "barcodes.tsv.gz")
 features.path <- paste0(matrix_dir, "features.tsv.gz")
 matrix.path <- paste0(matrix_dir, "matrix.mtx.gz")
@@ -186,6 +187,29 @@ barcode.names = read.delim(barcode.path,
                            stringsAsFactors = FALSE)
 colnames(mat) = barcode.names$V1
 rownames(mat) = feature.names$V1
+print(mat[1:6,1:6])
+print(dim(mat))
+~~~
+
+output is :
+~~~
+6 x 6 sparse Matrix of class "dgTMatrix"
+                AAACCCAAGAAACCCA-1 AAACCCAAGAAACTCA-1 AAACCCAAGAAATTCG-1
+ENSG00000290825                  .                  .                  .
+ENSG00000243485                  .                  .                  .
+ENSG00000237613                  .                  .                  .
+ENSG00000290826                  .                  .                  .
+ENSG00000186092                  .                  .                  .
+ENSG00000238009                  .                  .                  .
+                AAACCCAAGAACTGAT-1 AAACCCAAGAAGAAAC-1 AAACCCAAGAAGAGTA-1
+ENSG00000290825                  .                  .                  .
+ENSG00000243485                  .                  .                  .
+ENSG00000237613                  .                  .                  .
+ENSG00000290826                  .                  .                  .
+ENSG00000186092                  .                  .                  .
+ENSG00000238009                  .                  .                  .
+
+[1]  38606 340411
 ~~~
 
       
