@@ -187,8 +187,8 @@ barcode.names = read.delim(barcode.path,
                            stringsAsFactors = FALSE)
 colnames(mat) = barcode.names$V1
 rownames(mat) = feature.names$V1
-print(mat[1:6,1:6])
-print(dim(mat))
+print(mat[1:6,1:6]) #show top 6 rows and 6 columns data
+print(dim(mat)) #the dimsions of data
 ~~~
 
 output is :
@@ -210,6 +210,8 @@ ENSG00000186092                  .                  .                  .
 ENSG00000238009                  .                  .                  .
 
 [1]  38606 340411
+
+'.' means this position is '0'
 ~~~
 
       
