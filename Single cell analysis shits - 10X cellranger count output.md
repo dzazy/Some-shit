@@ -210,7 +210,12 @@ Second,we use python to read the matrix:
 ~~~{python}
 #need to install pandas by using 'pip install pandas'
 import pandas as pd
- 
+import os
+import scipy.io
+
+matrix_dir = "your/path/to/raw_feature_bc_matrix/"
+mat = scipy.io.mmread(os.path.join(matrix_dir, "matrix.mtx.gz"))
+
 # transform table to pandas dataframe and label rows and columns
 matrix = pd.DataFrame.sparse.from_spmatrix(mat)
 matrix.columns = barcodes
