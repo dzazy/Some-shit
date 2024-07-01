@@ -97,20 +97,20 @@ The result folder is 'run_count_1kpbmcs/outs'
          │       └── gene_expression_2_components
          │           └── projection.csv
          ├── cloupe.cloupe
-         ├── filtered_feature_bc_matrix
+         ├── filtered_feature_bc_matrix  #single cell filtered matrix
          │   ├── barcodes.tsv.gz
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
-         ├── filtered_feature_bc_matrix.h5
+         ├── filtered_feature_bc_matrix.h5  #single cell filtered matrix(h5 format)
          ├── metrics_summary.csv
          ├── molecule_info.h5
          ├── possorted_genome_bam.bam
          ├── possorted_genome_bam.bam.bai
-         ├── raw_feature_bc_matrix
+         ├── raw_feature_bc_matrix  #single cell raw matrix
          │   ├── barcodes.tsv.gz
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
-         ├── raw_feature_bc_matrix.h5
+         ├── raw_feature_bc_matrix.h5  #single cell raw matrix(h5 format)
          └── web_summary.html
 
       31 directories, 41 files
@@ -296,13 +296,57 @@ Here is a sample of what final_matrix.csv looks like:
       AAACCTGCACATTAGC-1,ENSG00000008128,CDK11A,Gene Expression,1
       AAACCTGCACATTAGC-1,ENSG00000008952,SEC62,Gene Expression,2
       ...
-      It has 5 column:
+      It has 5 columns:
       1.10x Genomics cellular barcode
       2.Feature ID
       3.Feature name
       4.Feature type
       5.UMI count
       e.g.'AAACCTGCACATTAGC-1,ENSG00000005075,POLR2J,Gene Expression,1' The POLR2J gene(ENSG00000005075) has one sequence in 'AAACCTGCACATTAGC-1' barcoded cell.
+
+2.raw_feature_bc_matrix.h5 and filtered_feature_bc_matrix.h5 file:H5 format single cell raw and filtered matrix(binary format)
+Except cellranger mat2csv,We can use Seurat in R to load .h5 matrix file.
+~~~{R}
+BiocManager::install(Seurat)
+library(Seurat)
+Seurat_matrix = Read10X_h5("raw_feature_bc_matrix.h5")
+~~~
+output is:
+~~~
+str(Seurat_matrix)
+Formal class 'dgCMatrix' [package "Matrix"] with 6 slots
+  ..@ i       : int [1:5370658] 2056 4621 7667 10583 18339 20034 20099 20564 21162 23190 ...
+  ..@ p       : int [1:340412] 0 0 13 14 15 16 20 21 23 25 ...
+  ..@ Dim     : int [1:2] 38606 340411
+  ..@ Dimnames:List of 2
+  .. ..$ : chr [1:38606] "DDX11L2" "MIR1302-2HG" "FAM138A" "ENSG00000290826" ...
+  .. ..$ : chr [1:340411] "AAACCCAAGAAACCCA-1" "AAACCCAAGAAACTCA-1" "AAACCCAAGAAATTCG-1" "AAACCCAAGAACTGAT-1" ...
+  ..@ x       : num [1:5370658] 1 1 1 1 1 1 1 1 1 1 ...
+  ..@ factors : list()
+The data format is dgCMatrix,it has 6 solts:
+1.i is row index of the data x
+2.p is column index of the data x
+3.Dim is dimsion of the data(e.g.the matrix has 38606 rows and 340411 columns)
+4.Dimnames is the row names and column names of the data(e.g.row is symbol name of genes,column is barcodes)
+5.x is the value
+6.factors is a blank list
+
+print(as.matrix(Seurat_matrix)[1:6,1:6])
+                AAACCCAAGAAACCCA-1 AAACCCAAGAAACTCA-1 AAACCCAAGAAATTCG-1 AAACCCAAGAACTGAT-1 AAACCCAAGAAGAAAC-1 AAACCCAAGAAGAGTA-1
+DDX11L2                          0                  0                  0                  0                  0                  0
+MIR1302-2HG                      0                  0                  0                  0                  0                  0
+FAM138A                          0                  0                  0                  0                  0                  0
+ENSG00000290826                  0                  0                  0                  0                  0                  0
+OR4F5                            0                  0                  0                  0                  0                  0
+ENSG00000238009                  0                  0                  0                  0                  0                  0
+
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 97.9 GiB
+The results is same as previous.
+note:The normal matrix uses a lot of memory,usually we don't use that format of matrix to process data,here just to show the data. 
+~~~
+
 
 
 
