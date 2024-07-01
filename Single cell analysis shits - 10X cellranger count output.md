@@ -239,11 +239,27 @@ matrix.columns = barcodes
 matrix.insert(loc=0, column="feature_id", value=feature_ids)
 matrix.insert(loc=0, column="gene", value=gene_names)
 matrix.insert(loc=0, column="feature_type", value=feature_types)
- 
+# save the table as a CSV (note the CSV will be a very large file)
+#matrix.to_csv("mex_matrix.csv", index=False)
+~~~
+output is:
+~~~{python}
 # display matrix
 print(matrix)
-# save the table as a CSV (note the CSV will be a very large file)
-matrix.to_csv("mex_matrix.csv", index=False)
+          feature_type             gene       feature_id  AAACCCAAGAAACCCA-1  ...  TTTGTTGTCTTGGAAC-1  TTTGTTGTCTTTCTAG-1  TTTGTTGTCTTTGAGA-1  TTTGTTGTCTTTGCGC-1
+0      Gene Expression          DDX11L2  ENSG00000290825                   0  ...                   0                   0                   0                   0
+1      Gene Expression      MIR1302-2HG  ENSG00000243485                   0  ...                   0                   0                   0                   0
+2      Gene Expression          FAM138A  ENSG00000237613                   0  ...                   0                   0                   0                   0
+3      Gene Expression  ENSG00000290826  ENSG00000290826                   0  ...                   0                   0                   0                   0
+4      Gene Expression            OR4F5  ENSG00000186092                   0  ...                   0                   0                   0                   0
+...                ...              ...              ...                 ...  ...                 ...                 ...                 ...                 ...
+38601  Gene Expression  ENSG00000277836  ENSG00000277836                   0  ...                   0                   0                   0                   0
+38602  Gene Expression  ENSG00000278633  ENSG00000278633                   0  ...                   0                   0                   0                   0
+38603  Gene Expression  ENSG00000276017  ENSG00000276017                   0  ...                   0                   0                   0                   0
+38604  Gene Expression  ENSG00000278817  ENSG00000278817                   0  ...                   0                   0                   0                   0
+38605  Gene Expression  ENSG00000277196  ENSG00000277196                   0  ...                   0                   0                   0                   0
+
+[38606 rows x 340414 columns]
 ~~~
       
 
