@@ -262,7 +262,13 @@ print(matrix)
 [38606 rows x 340414 columns]
 ~~~
       
-
+Third,we use cellranger mat2csv to read the matrix:
+~~~{bash}
+# convert from MEX
+cellranger mat2csv your/payh/to/raw_feature_bc_matrix raw_feature_bc_matrix.csv
+# or, convert from HDF5
+cellranger mat2csv your/payh/to/raw_feature_bc_matrix.h5 raw_feature_bc_matrix.csv
+~~~
 
 
 
