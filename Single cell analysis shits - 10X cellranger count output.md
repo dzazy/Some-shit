@@ -208,13 +208,30 @@ note:'.' means this position is '0'
 
 Second,we use python to read the matrix:
 ~~~{python}
-#need to install pandas by using 'pip install pandas'
-import pandas as pd
+import csv
+import gzip
 import os
 import scipy.io
-
-matrix_dir = "your/path/to/raw_feature_bc_matrix/"
+ 
+# define MEX directory
+matrix_dir = "/your/path/to/raw_feature_bc_matrix"
+# read in MEX format matrix as table
 mat = scipy.io.mmread(os.path.join(matrix_dir, "matrix.mtx.gz"))
+ 
+# list of transcript ids, e.g. 'ENSG00000243485'
+features_path = os.path.join(matrix_dir, "features.tsv.gz")
+feature_ids = [row[0] for row in csv.reader(gzip.open(features_path, mode="rt"), delimiter="\t")]
+ 
+# list of gene names, e.g. 'MIR1302-2HG'
+gene_names = [row[1] for row in csv.reader(gzip.open(features_path, mode="rt"), delimiter="\t")]
+ 
+# list of feature_types, e.g. 'Gene Expression'
+feature_types = [row[2] for row in csv.reader(gzip.open(features_path, mode="rt"), delimiter="\t")]
+barcodes_path = os.path.join(matrix_dir, "barcodes.tsv.gz")
+barcodes = [row[0] for row in csv.reader(gzip.open(barcodes_path, mode="rt"), delimiter="\t")]
+
+#need to install pandas by using 'pip install pandas'
+import pandas as pd
 
 # transform table to pandas dataframe and label rows and columns
 matrix = pd.DataFrame.sparse.from_spmatrix(mat)
