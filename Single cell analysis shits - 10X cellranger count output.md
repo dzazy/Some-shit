@@ -265,11 +265,11 @@ print(matrix)
 Third,we use cellranger mat2csv to read the matrix:
 ~~~{bash}
 # convert from MEX
-cellranger mat2csv your/payh/to/raw_feature_bc_matrix raw_feature_bc_matrix.csv
+#cellranger mat2csv your/payh/to/raw_feature_bc_matrix raw_feature_bc_matrix.csv
 # or, convert from HDF5
-cellranger mat2csv your/payh/to/raw_feature_bc_matrix.h5 raw_feature_bc_matrix.csv
+#cellranger mat2csv your/payh/to/raw_feature_bc_matrix.h5 raw_feature_bc_matrix.csv
 ~~~
-
+Warning:Dense files can be very large and may cause Excel to crash, or even fail in mat2csv if your computer doesn't have enough memory. For example, a feature-barcode matrix from a human reference (~33k genes) with ~3k barcodes uses at least 200MB of disk space. Our 1.3 million mouse neuron dataset, if converted to this format, would use more than 60GB of disk space. Thus, while you can use mat2csv for small datasets, we strongly recommend using R or Python (as shown in the sections above) to examine these matrix files.  
 
 
 
