@@ -97,7 +97,7 @@ The result folder is 'run_count_1kpbmcs/outs'
          │       └── gene_expression_2_components
          │           └── projection.csv
          ├── cloupe.cloupe
-         ├── filtered_feature_bc_matrix  #single cell filtered matrix
+         ├── filtered_feature_bc_matrix  #Contains only detected cell-associated barcodes in MEX format. Each element of the matrix is the number of UMIs associated with a feature (row) and a barcode (column)
          │   ├── barcodes.tsv.gz
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
@@ -106,7 +106,7 @@ The result folder is 'run_count_1kpbmcs/outs'
          ├── molecule_info.h5
          ├── possorted_genome_bam.bam
          ├── possorted_genome_bam.bam.bai
-         ├── raw_feature_bc_matrix  #single cell raw matrix
+         ├── raw_feature_bc_matrix  #Contains all detected barcodes in MEX format. Each element of the matrix is the number of UMIs associated with a feature (row) and a barcode (column)
          │   ├── barcodes.tsv.gz
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
@@ -346,6 +346,35 @@ In asMethod(object) :
 The results is same as previous.
 note:The normal matrix uses a lot of memory,usually we don't use that format of matrix to process data,here just to show the data. 
 ~~~
+
+3.metrics_summary.csv:The statstics information of the library.  
+
+      The content of the data is:
+      Estimated Number of Cells,Mean Reads per Cell,Median Genes per Cell,Number of Reads,Valid Barcodes,Sequencing Saturation,Q30 Bases in Barcode,Q30 Bases in RNA Read,Q30 Bases in UMI,Reads Mapped to Genome,Reads Mapped Confidently to Genome,Reads Mapped Confidently to Intergenic Regions,Reads Mapped Confidently to Intronic Regions,Reads Mapped Confidently to Exonic Regions,Reads Mapped Confidently to Transcriptome,Reads Mapped Antisense to Gene,Fraction Reads in Cells,Total Genes Detected,Median UMI Counts per Cell
+      "1,230","54,148","3,286","66,601,887",97.4%,70.8%,94.1%,90.2%,92.7%,96.1%,93.7%,3.7%,31.1%,58.9%,81.4%,7.9%,95.6%,"25,864","9,975"
+      We can reshape the data
+      Estimated Number of Cells                          "1,230"
+      Mean Reads per Cell                                "54,148"
+      Median Genes per Cell                              "3,286"
+      Number of Reads                                    "66,601,887"
+      Valid Barcodes                                     97.4%
+      Sequencing Saturation                              70.8%
+      Q30 Bases in Barcode                               94.1%
+      Q30 Bases in RNA Read                              90.2%
+      Q30 Bases in UMI                                   92.7%
+      Reads Mapped to Genome                             96.1%
+      Reads Mapped Confidently to Genome                 93.7%
+      Reads Mapped Confidently to Intergenic Regions     3.7%
+      Reads Mapped Confidently to Intronic Regions       31.1%
+      Reads Mapped Confidently to Exonic Regions         58.9%
+      Reads Mapped Confidently to Transcriptome          81.4%
+      Reads Mapped Antisense to Gene                     7.9%
+      Fraction Reads in Cells                            95.6%
+      Total Genes Detected                               "25,864"
+      Median UMI Counts per Cell                         "9,975"
+      The data has 19 columns:
+      1.Estimated Number of Cells:The number of barcodes associated with cell-containing partitions, estimated from the barcode UMI count distribution.(e.g.The library contains 1230 cell-containing barcodes)
+      2.
 
 
 
