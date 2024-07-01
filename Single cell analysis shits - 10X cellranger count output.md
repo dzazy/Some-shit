@@ -304,7 +304,7 @@ Here is a sample of what final_matrix.csv looks like:
       5.UMI count
       e.g.'AAACCTGCACATTAGC-1,ENSG00000005075,POLR2J,Gene Expression,1' The POLR2J gene(ENSG00000005075) has one sequence in 'AAACCTGCACATTAGC-1' barcoded cell.
 
-2.raw_feature_bc_matrix.h5 and filtered_feature_bc_matrix.h5 file:H5 format single cell raw and filtered matrix(binary format)
+2.raw_feature_bc_matrix.h5 and filtered_feature_bc_matrix.h5 file:H5 format single cell raw and filtered matrix(binary format)  
 Except cellranger mat2csv,We can use Seurat in R to load .h5 matrix file.
 ~~~{R}
 BiocManager::install(Seurat)
