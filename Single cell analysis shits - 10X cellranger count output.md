@@ -169,7 +169,7 @@ Each file or folder structure:
       3.data
       (e.g.'2057 2 1' means '1' is at '2057' row,'2' column of matrix)
 
-We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix.  
+We can use R,python,or cellranger mat2csv to convert MEX matrix into normal matrix.(ref website:https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/matrices#r-load-mat)  
 Firstly,we use R to read matrix:
 ~~~{R}
 library(Matrix)
@@ -270,6 +270,39 @@ Third,we use cellranger mat2csv to read the matrix:
 #cellranger mat2csv your/payh/to/raw_feature_bc_matrix.h5 raw_feature_bc_matrix.csv
 ~~~
 Warning:Dense files can be very large and may cause Excel to crash, or even fail in mat2csv if your computer doesn't have enough memory. For example, a feature-barcode matrix from a human reference (~33k genes) with ~3k barcodes uses at least 200MB of disk space. Our 1.3 million mouse neuron dataset, if converted to this format, would use more than 60GB of disk space. Thus, while you can use mat2csv for small datasets, we strongly recommend using R or Python (as shown in the sections above) to examine these matrix files.  
+
+By the way,we also can use bash code to convert MXE into long table format(omit all 'NA' data)(ref website:https://kb.10xgenomics.com/hc/en-us/articles/360023793031-How-can-I-convert-the-feature-barcode-matrix-from-Cell-Ranger-3-to-a-CSV-file)  
+~~~{bash}
+# Print line number along with contents of barcodes.tsv.gz and genes.tsv.gz 
+zcat barcodes.tsv.gz | awk -F "\t" 'BEGIN { OFS = "," }; {print NR,$1}' | sort -t, -k 1b,1 > numbered_barcodes.csv
+zcat features.tsv.gz | awk -F "\t" 'BEGIN { OFS = "," }; {print NR,$1,$2,$3}' | sort -t, -k 1b,1 > numbered_features.csv
+
+# Skip the header lines and sort matrix.mtx.gz
+zcat matrix.mtx.gz | tail -n +4 | awk -F " " 'BEGIN { OFS = "," }; {print $1,$2,$3}' | sort -t, -k 1b,1 > feature_sorted_matrix.csv
+zcat matrix.mtx.gz | tail -n +4 | awk -F " " 'BEGIN { OFS = "," }; {print $1,$2,$3}' | sort -t, -k 2b,2 > barcode_sorted_matrix.csv
+
+# Use join to replace line number with barcodes and genes
+join -t, -1 1 -2 1 numbered_features.csv feature_sorted_matrix.csv | cut -d, -f 2,3,4,5,6 | sort -t, -k 4b,4 | join -t, -1 1 -2 4 numbered_barcodes.csv - | cut -d, -f 2,3,4,5,6 > final_matrix.csv
+
+# Remove temp files
+rm -f barcode_sorted_matrix.csv feature_sorted_matrix.csv numbered_barcodes.csv numbered_features.csv
+~~~
+
+Here is a sample of what final_matrix.csv looks like:
+
+      AAACCTGCACATTAGC-1,ENSG00000005075,POLR2J,Gene Expression,1
+      AAACCTGCACATTAGC-1,ENSG00000006015,C19orf60,Gene Expression,1
+      AAACCTGCACATTAGC-1,ENSG00000007944,MYLIP,Gene Expression,2
+      AAACCTGCACATTAGC-1,ENSG00000008128,CDK11A,Gene Expression,1
+      AAACCTGCACATTAGC-1,ENSG00000008952,SEC62,Gene Expression,2
+      ...
+      It has 5 column:
+      1.10x Genomics cellular barcode
+      2.Feature ID
+      3.Feature name
+      4.Feature type
+      5.UMI count
+      e.g.'AAACCTGCACATTAGC-1,ENSG00000005075,POLR2J,Gene Expression,1' The POLR2J gene(ENSG00000005075) has one sequence in 'AAACCTGCACATTAGC-1' barcoded cell.
 
 
 
