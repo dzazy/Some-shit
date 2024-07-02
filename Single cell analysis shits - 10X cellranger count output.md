@@ -374,7 +374,32 @@ note:The normal matrix uses a lot of memory,usually we don't use that format of 
       Median UMI Counts per Cell                         "9,975"
       The data has 19 columns:
       1.Estimated Number of Cells:The number of barcodes associated with cell-containing partitions, estimated from the barcode UMI count distribution.(e.g.The library contains 1230 cell-containing barcodes)
-      2.
+      2.Mean Reads per Cell:The total number of reads divided by the estimated number of cells.
+      3.Median Genes per Cell:The median number of genes detected (with nonzero UMI counts) across all cell-associated barcodes.
+      4.Number of Reads:Total number of sequenced reads.
+      5.Valid Barcodes:Fraction of reads with cell-barcodes that match the whitelist.
+      6.Sequencing Saturation:Fraction of reads originating from an already-observed UMI. This is a function of library complexity and sequencing depth. More specifically, this is a ratio where: the denominator is the number of confidently-mapped reads with a valid cell-barcode and valid UMI, and the numerator is the subset of those reads that had a non-unique combination of (cell-barcode, UMI, gene).
+      7.Q30 Bases in Barcode:Fraction of bases with Q-score at least 30 in the cell barcode sequences. This is the i7 index (I1) read for the Single Cell 3' v1 chemistry and the R1 read for the Single Cell 3' v2 chemistry.
+      8.Q30 Bases in RNA Read:Fraction of bases with Q-score at least 30 in the RNA read sequences. This is Illumina R1 for the Single Cell 3' v1 chemistry and Illumina R2 for the Single Cell 3' v2 chemistry.
+      9.Q30 Bases in UMI:Fraction of bases with Q-score at least 30 in the UMI sequences. This is the R2 read for the Single Cell 3' v1 chemistry and the R1 read for the Single Cell 3' v2 chemistry.
+      10.Reads Mapped to Genome:Fraction of reads that mapped to the genome.
+      11.Reads Confidently Mapped to Genome:Fraction of reads that mapped uniquely to the genome. If a read mapped to exonic loci from a single gene and also to non-exonic loci, it is considered uniquely mapped to one of the exonic loci.
+      12.Reads Mapped Confidently to Intergenic Regions:Fraction of reads that mapped to the intergenic regions of the genome with a high mapping quality score as reported by the aligner.
+      13.Reads Mapped Confidently to Intronic Regions:Fraction of reads that mapped to the intronic regions of the genome with a high mapping quality score as reported by the aligner.
+      14.Reads Mapped Confidently to Exonic Regions:Fraction of reads that mapped to the exonic regions of the genome with a high mapping quality score as reported by the aligner.
+      15.Reads Mapped Confidently to Transcriptome:Fraction of reads that mapped to a unique gene in the transcriptome with a high mapping quality score as reported by the aligner. The read must be consistent with annotated splice junctions when include-introns=false. These reads are considered for UMI counting.
+      16.Reads Confidently Mapped Antisense:Fraction of reads confidently mapped to the transcriptome, but on the opposite strand of their annotated gene. A read is counted as antisense if it has any alignments that are consistent with an exon of a transcript but antisense to it, and has no sense alignments.
+      17.Fraction Reads in Cells:The fraction of cell-barcoded, confidently mapped reads with cell-associated barcodes.
+      18.Total Genes Detected:The number of genes with at least one UMI count in any cell.
+      19.Median UMI Counts per Cell:The median number of total UMI counts across all cell-associated barcodes.
+
+
+
+
+
+
+
+Number of Short Reads Skipped	Total number of read pairs that were ignored by the pipeline because they do not satisfy the minimum length requirements (for example Read-1 less that 26 bases in 3' v2 or 3' v3 or 5').
 
 
 
