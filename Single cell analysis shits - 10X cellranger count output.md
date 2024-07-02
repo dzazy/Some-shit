@@ -102,10 +102,10 @@ The result folder is 'run_count_1kpbmcs/outs'
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
          ├── filtered_feature_bc_matrix.h5  #single cell filtered matrix(h5 format)
-         ├── metrics_summary.csv
-         ├── molecule_info.h5
-         ├── possorted_genome_bam.bam
-         ├── possorted_genome_bam.bam.bai
+         ├── metrics_summary.csv  #The statstics information of the library,contains a number of key metrics about the barcoding and sequencing process.
+         ├── molecule_info.h5  #Contains per-molecule information for all molecules that contain a valid barcode, valid UMI, and were assigned with high confidence to a gene or Feature Barcode. This file is a required input to run cellranger aggr.(h5 format)
+         ├── possorted_genome_bam.bam  #Indexed BAM file containing position-sorted reads aligned to the genome and transcriptome, as well as unaligned reads, annotated with barcode information. 
+         ├── possorted_genome_bam.bam.bai  #Index of possorted_genome_bam.bam file
          ├── raw_feature_bc_matrix  #Contains all detected barcodes in MEX format. Each element of the matrix is the number of UMIs associated with a feature (row) and a barcode (column)
          │   ├── barcodes.tsv.gz
          │   ├── features.tsv.gz
@@ -393,13 +393,15 @@ note:The normal matrix uses a lot of memory,usually we don't use that format of 
       18.Total Genes Detected:The number of genes with at least one UMI count in any cell.
       19.Median UMI Counts per Cell:The median number of total UMI counts across all cell-associated barcodes.
 
+4.possorted_genome_bam.bam:Indexed BAM file containing position-sorted reads aligned to the genome and transcriptome, as well as unaligned reads, annotated with barcode information. 
 
+      The file format is similar to:
+      A00228:279:HFWFVDMXX:2:1385:2085:18975  16      chr1    13402   0       91M     *       0       0       GAGCCTCCACCACCCCGAGATCACATTTCTCACTGCCTTTTGTCTGCCCAGTTTCACCAGAAGTAGGCCTCTTCCTGACAGGCAGCTGCAC     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF     NH:i:6  HI:i:1  AS:i:89 nM:i:0  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:2  RE:A:E  AN:Z:ENST00000456328,-649,91M   xf:i:0  CR:Z:TCTGCATGTAACTTAA   CY:Z:FFFFFFFFFFFFFFFF   UR:Z:TACCACAACCAG       UY:Z:FFFFFFFFFFFF       UB:Z:TACCACAACCAG
+      A00228:279:HFWFVDMXX:1:2388:30499:30827 1024    chr1    13421   255     91M     *       0       0       ATCACATTTCTCACTGCCTTTTGTCTGCCCAGTTTCACCAGAAGTAGGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCC     FF,:,F,,,,FF:,FFF:FFFFFFFFFFFFFFF,FFFFFFF:FF:FFFFF,FFFFFFFFFFFF,:FFFF,,FFFFF,F,FFFF:,,FFFFF     NH:i:2  HI:i:2  AS:i:89 nM:i:0  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:1  TX:Z:ENST00000456328,+668,91M   GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFF:FFFFFF:F,FFF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z::F,:,FF,FFFF       UB:Z:GCCTTACAGGTC
+      A00228:279:HFWFVDMXX:1:2415:3640:8015   1024    chr1    13435   255     1S90M   *       0       0       ATGCCTTTTGTCTGCCCAGTTTCACCAGAAGTATGCATCTTCATGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCT     ,FFFFF:FFFFF:,F:FF,FFFFFF:F:FF:FF,,F,FFFFF,F:FFFF,FF:FFFFF:,F:F,,:FF,:FFFFF:F:FFF,:FFF,:F::     NH:i:2  HI:i:2  AS:i:82 nM:i:3  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:1  TX:Z:ENST00000456328,+682,1S90M GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFFFFFF,::F,FF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:,:FFFFFFF:F:       UB:Z:GCCTTACAGGTC
+      A00228:279:HFWFVDMXX:1:2317:2790:31093  0       chr1    13464   255     89M2S   *       0       0       GTAGGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCTGCCCGCTGGAGACGGTGTTTGTAATGGGGA     FFFFFFF,,FF,F:FFFFFFFF,FF:FFFFFFFF,,FFFFFFFFFF,FFFFFFF:FF,F:FFFFFFFF:,F:FFFFF,FFF,F,::,::,,     NH:i:2  HI:i:1  AS:i:85 nM:i:1  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:1  TX:Z:ENST00000456328,+711,89M2S GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:25 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFF:FFFF:FFF:F   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:FF,FF:FF:FFF       UB:Z:GCCTTACAGGTC
+      A00228:279:HFWFVDMXX:2:2166:6289:9565   1024    chr1    13467   255     91M     *       0       0       GGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCTGCCCGCTGGAGACGGTGTTTGTGCTGGGCCTGG     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:F,FF:,,,:F:F,:,:F     NH:i:3  HI:i:1  AS:i:85 nM:i:2  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:2  TX:Z:ENST00000456328,+714,91M   GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFFFFFFFFFFFFF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:FFFFFFFFFFFF       UB:Z:GCCTTACAGGTC
 
-
-
-
-
-Number of Short Reads Skipped	Total number of read pairs that were ignored by the pipeline because they do not satisfy the minimum length requirements (for example Read-1 less that 26 bases in 3' v2 or 3' v3 or 5').
 
 
 
