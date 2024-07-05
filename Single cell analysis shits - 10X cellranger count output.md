@@ -406,8 +406,8 @@ samtools view possorted_genome_bam.bam | less -S
       A00228:279:HFWFVDMXX:2:2166:6289:9565   1024    chr1    13467   255     91M     *       0       0       GGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCTGCCCGCTGGAGACGGTGTTTGTGCTGGGCCTGG     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:F,FF:,,,:F:F,:,:F     NH:i:3  HI:i:1  AS:i:85 nM:i:2  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:2  TX:Z:ENST00000456328,+714,91M   GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFFFFFFFFFFFFF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:FFFFFFFFFFFF       UB:Z:GCCTTACAGGTC
       ...
       The file has 12 columns:
-      1.Sequence name(e.g.'A00228:279:HFWFVDMXX:2:1385:2085:18975' is the read name)
-      2.FLAG number,it is a binary number convert to decimal number(e.g.'77' = 000001001101 = 1 + 4 + 8 +64,means 1.PE read,2.the read itself is unmapped,3.its mate is unmapped,4.this is read1)
+      1.QNAME:Sequence name(e.g.'A00228:279:HFWFVDMXX:2:1385:2085:18975' is the read name)
+      2.FLAG:FLAG number,it is a binary number convert to decimal number(e.g.'77' = 000001001101 = 1 + 4 + 8 +64,means 1.PE read,2.the read itself is unmapped,3.its mate is unmapped,4.this is read1)
       abstract the read is paired in sequencing, no matter whether it is mapped in a pair      1
       abstract the read is mapped in a proper pair                                             2
       abstract the read itself is unmapped; conflictive with BAM_FPROPER_PAIR                  4
@@ -420,6 +420,10 @@ samtools view possorted_genome_bam.bam | less -S
       abstract QC failure                                                                    512
       abstract optical or PCR duplicate                                                     1024
       abstract supplementary alignment                                                      2048
+      3.RNAME:Chromosome name(e.g. chr1 is the name of chromosome 1)
+      4.POS:left mapped position(e.g.'13402' means this read start mapped to '13402' position of the genome)
+      5.MAPQ:mapping quality(-10log10P[mapping position is wrong],'255' indicates that the mapping quality is not available)
+      6.CIGAR:
 ~~~
 
 
