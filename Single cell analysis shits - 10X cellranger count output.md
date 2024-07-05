@@ -393,7 +393,7 @@ note:The normal matrix uses a lot of memory,usually we don't use that format of 
       18.Total Genes Detected:The number of genes with at least one UMI count in any cell.
       19.Median UMI Counts per Cell:The median number of total UMI counts across all cell-associated barcodes.
 
-4.possorted_genome_bam.bam:Indexed BAM file containing position-sorted reads aligned to the genome and transcriptome, as well as unaligned reads, annotated with barcode information. 
+4.possorted_genome_bam.bam:Indexed BAM file containing position-sorted reads aligned to the genome and transcriptome, as well as unaligned reads, annotated with barcode information.  
 The bam file is compressed mapping results sam file.We can use samtools software to read the content.(ref website:https://samtools.github.io/hts-specs/SAMv1.pdf)
 ~~~{bash}
 #conda install samtools  Need conda environment
