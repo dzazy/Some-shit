@@ -404,8 +404,22 @@ samtools view possorted_genome_bam.bam | less -S
       A00228:279:HFWFVDMXX:1:2415:3640:8015   1024    chr1    13435   255     1S90M   *       0       0       ATGCCTTTTGTCTGCCCAGTTTCACCAGAAGTATGCATCTTCATGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCT     ,FFFFF:FFFFF:,F:FF,FFFFFF:F:FF:FF,,F,FFFFF,F:FFFF,FF:FFFFF:,F:F,,:FF,:FFFFF:F:FFF,:FFF,:F::     NH:i:2  HI:i:2  AS:i:82 nM:i:3  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:1  TX:Z:ENST00000456328,+682,1S90M GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFFFFFF,::F,FF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:,:FFFFFFF:F:       UB:Z:GCCTTACAGGTC
       A00228:279:HFWFVDMXX:1:2317:2790:31093  0       chr1    13464   255     89M2S   *       0       0       GTAGGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCTGCCCGCTGGAGACGGTGTTTGTAATGGGGA     FFFFFFF,,FF,F:FFFFFFFF,FF:FFFFFFFF,,FFFFFFFFFF,FFFFFFF:FF,F:FFFFFFFF:,F:FFFFF,FFF,F,::,::,,     NH:i:2  HI:i:1  AS:i:85 nM:i:1  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:1  TX:Z:ENST00000456328,+711,89M2S GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:25 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFF:FFFF:FFF:F   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:FF,FF:FF:FFF       UB:Z:GCCTTACAGGTC
       A00228:279:HFWFVDMXX:2:2166:6289:9565   1024    chr1    13467   255     91M     *       0       0       GGCCTCTTCCTGACAGGCAGCTGCACCACTGCCTGGCGCTGTGCCCTTCCTTTGCTCTGCCCGCTGGAGACGGTGTTTGTGCTGGGCCTGG     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:F,FF:,,,:F:F,:,:F     NH:i:3  HI:i:1  AS:i:85 nM:i:2  RG:Z:run_count_1kpbmcs:0:1:HFWFVDMXX:2  TX:Z:ENST00000456328,+714,91M   GX:Z:ENSG00000290825    GN:Z:DDX11L2    fx:Z:ENSG00000290825    RE:A:E  mm:i:1  xf:i:17 CR:Z:CACTGAAGTCTTTCTA   CY:Z:FFFFFFFFFFFFFFFF   CB:Z:CACTGAAGTCTTTCTA-1 UR:Z:GCCTTACAGGTC       UY:Z:FFFFFFFFFFFF       UB:Z:GCCTTACAGGTC
+      ...
       The file has 12 columns:
-      1.
+      1.Sequence name(e.g.'A00228:279:HFWFVDMXX:2:1385:2085:18975' is the read name)
+      2.FLAG number,it is a binary number convert to decimal number(e.g.'77' = 000001001101 = 1 + 4 + 8 +64,means 1.PE read,2.the read itself is unmapped,3.its mate is unmapped,4.this is read1)
+      abstract the read is paired in sequencing, no matter whether it is mapped in a pair      1
+      abstract the read is mapped in a proper pair                                             2
+      abstract the read itself is unmapped; conflictive with BAM_FPROPER_PAIR                  4
+      abstract the mate is unmapped                                                            8
+      abstract the read is mapped to the reverse strand                                       16
+      abstract the mate is mapped to the reverse strand                                       32
+      abstract this is read1                                                                  64
+      abstract this is read2                                                                 128
+      abstract not primary alignment                                                         256
+      abstract QC failure                                                                    512
+      abstract optical or PCR duplicate                                                     1024
+      abstract supplementary alignment                                                      2048
 ~~~
 
 
