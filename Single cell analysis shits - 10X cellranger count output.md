@@ -420,10 +420,22 @@ samtools view possorted_genome_bam.bam | less -S
       abstract QC failure                                                                    512
       abstract optical or PCR duplicate                                                     1024
       abstract supplementary alignment                                                      2048
-      3.RNAME:Chromosome name(e.g. chr1 is the name of chromosome 1)
-      4.POS:left mapped position(e.g.'13402' means this read start mapped to '13402' position of the genome)
+      3.RNAME: Reference sequence name of the alignment(e.g. chr1 is the name of chromosome 1)
+      4.POS: 1-based leftmost mapping position of the reference genome(e.g.'13402' means this read start mapped to '13402' position of the genome)
       5.MAPQ:mapping quality(-10log10P[mapping position is wrong],'255' indicates that the mapping quality is not available)
-      6.CIGAR:
+      6.CIGAR:CIGAR string.('*' if unavailable):
+        M alignment match (can be a sequence match or mismatch)
+        I insertion to the reference
+        D deletion from the reference 
+        N skipped region from the reference
+        S soft clipping (clipped sequences present in SEQ)
+        H hard clipping (clipped sequences NOT present in SEQ)
+        P padding (silent deletion from padded reference)
+        = sequence match
+        X sequence mismatch
+      (e.g. Reference       'AAGTC  TAGAA'
+                               |||  |||
+            Query             'GTCGATAG'     The result is "3M2I3M"
 ~~~
 
 
