@@ -408,18 +408,18 @@ samtools view possorted_genome_bam.bam | less -S
       The file has 12 columns:
       1.QNAME:Sequence name(e.g.'A00228:279:HFWFVDMXX:2:1385:2085:18975' is the read name)
       2.FLAG:FLAG number,it is a binary number convert to decimal number(e.g.'77' = 000001001101 = 1 + 4 + 8 +64,means 1.PE read,2.the read itself is unmapped,3.its mate is unmapped,4.this is read1)
-      abstract the read is paired in sequencing, no matter whether it is mapped in a pair      1
-      abstract the read is mapped in a proper pair                                             2
-      abstract the read itself is unmapped; conflictive with BAM_FPROPER_PAIR                  4
-      abstract the mate is unmapped                                                            8
-      abstract the read is mapped to the reverse strand                                       16
-      abstract the mate is mapped to the reverse strand                                       32
-      abstract this is read1                                                                  64
-      abstract this is read2                                                                 128
-      abstract not primary alignment                                                         256
-      abstract QC failure                                                                    512
-      abstract optical or PCR duplicate                                                     1024
-      abstract supplementary alignment                                                      2048
+        abstract the read is paired in sequencing, no matter whether it is mapped in a pair      1
+        abstract the read is mapped in a proper pair                                             2
+        abstract the read itself is unmapped; conflictive with BAM_FPROPER_PAIR                  4
+        abstract the mate is unmapped                                                            8
+        abstract the read is mapped to the reverse strand                                       16
+        abstract the mate is mapped to the reverse strand                                       32
+        abstract this is read1                                                                  64
+        abstract this is read2                                                                 128
+        abstract not primary alignment                                                         256
+        abstract QC failure                                                                    512
+        abstract optical or PCR duplicate                                                     1024
+        abstract supplementary alignment                                                      2048
       3.RNAME: Reference sequence name of the alignment(e.g. chr1 is the name of chromosome 1)
       4.POS: 1-based leftmost mapping position of the reference genome(e.g.'13402' means this read start mapped to '13402' position of the genome)
       5.MAPQ:mapping quality(-10log10P[mapping position is wrong],'255' indicates that the mapping quality is not available)
@@ -436,6 +436,10 @@ samtools view possorted_genome_bam.bam | less -S
       (e.g. Reference       'AAGTC  TAGAA'
                                |||  |||
             Query             'GTCGATAG'     The result is "3M2I3M"
+
+            Reference       'AAGTCTAGAA'
+                               |  |||
+            Query             'GAATAG'       The result is "1M2X3M"
 ~~~
 
 
