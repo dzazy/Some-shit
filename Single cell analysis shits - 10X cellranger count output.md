@@ -423,7 +423,7 @@ samtools view possorted_genome_bam.bam | less -S
       3.RNAME: Reference sequence name of the alignment(e.g. chr1 is the name of chromosome 1)
       4.POS: 1-based leftmost mapping position of the reference genome(e.g.'13402' means this read start mapped to '13402' position of the genome)
       5.MAPQ:mapping quality(-10log10P[mapping position is wrong],'255' indicates that the mapping quality is not available)
-      6.CIGAR:CIGAR string.('*' if unavailable):
+      6.CIGAR:CIGAR string.('*' is unavailable):
         M alignment match (can be a sequence match or mismatch)
         I insertion to the reference
         D deletion from the reference 
@@ -440,6 +440,24 @@ samtools view possorted_genome_bam.bam | less -S
             Reference       'AAGTCTAGAA'
                                |  |||
             Query             'GAATAG'       The result is "1M2X3M"
+      7.RNEXT:Reference sequence name of the mate read(Only Paired-end sequence data has this parameter,'*' is unavailable)
+      8.PNEXT:Mate read 1-based leftmost mapping position of the reference genome(Only Paired-end sequence data has this parameter,'0' is unavailable)
+      9.TLEN:The length of fragment between read and its mate(Only Paired-end sequence data has this parameter,'0' is unavailable)
+      10.SEQ:Read sequence
+      11.QUAL:The quality of read sequence
+      12.METADATA:The 12 column string is blank split,it has 12 columns:
+        1.NH:
+        2.HI:
+        3.AS:
+        4.nM:
+        5.RG:
+        6.RE:Single character indicating the region type of this alignment (E = exonic, N = intronic, I = intergenic).
+        7.AN:Present for reads that are aligned to the antisense strand of annotated transcripts. If intron counts are not included (with ), this tag is the same as the tag but with values for the strand identifier. If introns are included (), the AN tag contains the corresponding antisense gene identifier values (starting with ENSG) rather than transcript identifier values (starting with ENST). include-introns=falseTX-include-introns=true
+        8.CR:Chromium cellular barcode sequence as reported by the sequencer. For multiplex Fixed RNA Profiling, the cellular barcode is a combination of the 10x GEM Barcode and Probe Barcode sequences.
+        9.CY:Chromium cellular barcode read quality. For multiplex Fixed RNA Profiling, the cellular barcode is a combination of the 10x GEM Barcode and Probe Barcode sequences. Phred scores as reported by sequencer.
+        10.UR:Chromium molecular barcode sequence as reported by the sequencer.
+        11.UY:Chromium molecular barcode read quality. Phred scores as reported by sequencer.
+        12.UB:Chromium molecular barcode sequence that is error-corrected among other molecular barcodes with the same cellular barcode and gene alignment.
 ~~~
 
 
