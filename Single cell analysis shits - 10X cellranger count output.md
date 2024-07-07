@@ -463,7 +463,12 @@ samtools view possorted_genome_bam.bam | less -S
 5.web_summary.html:Run summary metrics and charts in HTML format  
 The cellranger count pipeline outputs an interactive summary HTML file named web_summary.html that contains summary metrics and automated secondary analysis results. If an issue was detected during the pipeline run, an alert appears on this page.(ref website:1.https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/summary  
 2.https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/troubleshooting#alerts  
-3.https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000329_TechnicalNote_InterpretingCellRangerWebSummaryFiles_RevA.pdf  )  
+3.https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000329_TechnicalNote_InterpretingCellRangerWebSummaryFiles_RevA.pdf) 
+We can use IE,Firefox or google browser to open it.  
+
+      This file has   parts:
+      1.
+
 
 
 
