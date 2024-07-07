@@ -445,10 +445,10 @@ samtools view possorted_genome_bam.bam | less -S
       9.TLEN:The length of fragment between read and its mate(Only Paired-end sequence data has this parameter,'0' is unavailable)
       10.SEQ:Read sequence
       11.QUAL:The quality of read sequence
-      12.METADATA:The 12 column string is blank split,it has 12 columns:
-        1.NH:
-        2.HI:
-        3.AS:
+      12.METADATA:The 12 column string is blank split,it has 12 columns:(ref website:https://samtools.github.io/hts-specs/SAMtags.pdf)
+        1.NH:The number of mapped locations for the read or the pair.(e.g.'NH:i:6' indicates this read mapped 6 locations of the genome)
+        2.HI:HI i Query hit index
+        3.AS:Alignment score,only aligned read has this score.(e.g.'AS:i:89' means the alignment score is 89)
         4.nM:
         5.RG:
         6.RE:Single character indicating the region type of this alignment (E = exonic, N = intronic, I = intergenic).
