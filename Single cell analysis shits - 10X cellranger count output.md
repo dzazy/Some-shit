@@ -111,7 +111,7 @@ The result folder is 'run_count_1kpbmcs/outs'
          │   ├── features.tsv.gz
          │   └── matrix.mtx.gz
          ├── raw_feature_bc_matrix.h5  #single cell raw matrix(h5 format)
-         └── web_summary.html
+         └── web_summary.html #Run summary metrics and charts in HTML format
 
       31 directories, 41 files
 
@@ -459,6 +459,9 @@ samtools view possorted_genome_bam.bam | less -S
         11.UY:Chromium molecular barcode read quality. Phred scores as reported by sequencer.
         12.UB:Chromium molecular barcode sequence that is error-corrected among other molecular barcodes with the same cellular barcode and gene alignment.
 ~~~
+
+5.web_summary.html:Run summary metrics and charts in HTML format  
+The cellranger count pipeline outputs an interactive summary HTML file named web_summary.html that contains summary metrics and automated secondary analysis results. If an issue was detected during the pipeline run, an alert appears on this page.(ref website:https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/summary,https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/troubleshooting#alerts,https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000329_TechnicalNote_InterpretingCellRangerWebSummaryFiles_RevA.pdf)  
 
 
 
