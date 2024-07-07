@@ -23,6 +23,7 @@ As you can see, the 'cellranger count' command usually have seven parameters:
     7.--localmem : How many memory will be used to run the pipeline
     
 Sequence fastq data(10X provided 1,000 PBMC data set as an example):
+
       1k PBMCs from a Healthy Donor (v3 chemistry)
       Peripheral blood mononuclear cells (PBMCs) from a healthy donor (the same cells were used to generate pbmc_1k_v2, pbmc_10k_v3). PBMCs are primary cells with relatively small amounts of RNA (~1pg RNA/cell).
       1,222 cells detected
