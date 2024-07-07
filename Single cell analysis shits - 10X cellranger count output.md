@@ -394,7 +394,7 @@ note:The normal matrix uses a lot of memory,usually we don't use that format of 
       19.Median UMI Counts per Cell:The median number of total UMI counts across all cell-associated barcodes.
 
 4.possorted_genome_bam.bam:Indexed BAM file containing position-sorted reads aligned to the genome and transcriptome, as well as unaligned reads, annotated with barcode information.  
-The bam file is compressed mapping results sam file.We can use samtools software to read the content.(ref website:https://samtools.github.io/hts-specs/SAMv1.pdf)
+The bam file is compressed mapping results sam file.We can use samtools software to read the content.(ref website:https://samtools.github.io/hts-specs/SAMv1.pdf,https://samtools.github.io/hts-specs/SAMtags.pdf)
 ~~~{bash}
 #conda install samtools  Need conda environment
 samtools view possorted_genome_bam.bam | less -S
@@ -445,12 +445,12 @@ samtools view possorted_genome_bam.bam | less -S
       9.TLEN:The length of fragment between read and its mate(Only Paired-end sequence data has this parameter,'0' is unavailable)
       10.SEQ:Read sequence
       11.QUAL:The quality of read sequence
-      12.METADATA:The 12 column string is blank split,it has 12 columns:(ref website:https://samtools.github.io/hts-specs/SAMtags.pdf)
+      12.METADATA:The 12 column string is blank split,it has 12 columns:
         1.NH:The number of mapped locations for the read or the pair.(e.g.'NH:i:6' indicates this read mapped 6 locations of the genome)
-        2.HI:HI i Query hit index
+        2.HI:Query hit index,indicating the alignment record is the i-th one stored in SAM.
         3.AS:Alignment score,only aligned read has this score.(e.g.'AS:i:89' means the alignment score is 89)
-        4.nM:
-        5.RG:
+        4.nM:Number of differences (mismatches plus inserted and deleted bases) between the sequence and reference.
+        5.RG:Read group,the read group to which the read belongs
         6.RE:Single character indicating the region type of this alignment (E = exonic, N = intronic, I = intergenic).
         7.AN:Present for reads that are aligned to the antisense strand of annotated transcripts. If intron counts are not included (with ), this tag is the same as the tag but with values for the strand identifier. If introns are included (), the AN tag contains the corresponding antisense gene identifier values (starting with ENSG) rather than transcript identifier values (starting with ENST). include-introns=falseTX-include-introns=true
         8.CR:Chromium cellular barcode sequence as reported by the sequencer. For multiplex Fixed RNA Profiling, the cellular barcode is a combination of the 10x GEM Barcode and Probe Barcode sequences.
