@@ -23,6 +23,12 @@ As you can see, the 'cellranger count' command usually have seven parameters:
     7.--localmem : How many memory will be used to run the pipeline
     
 Sequence fastq data(10X provided 1,000 PBMC data set as an example):
+      1k PBMCs from a Healthy Donor (v3 chemistry)
+      Peripheral blood mononuclear cells (PBMCs) from a healthy donor (the same cells were used to generate pbmc_1k_v2, pbmc_10k_v3). PBMCs are primary cells with relatively small amounts of RNA (~1pg RNA/cell).
+      1,222 cells detected
+      Sequenced on Illumina NovaSeq with approximately 54,000 reads per cell
+      28bp read1 (16bp Chromium barcode and 12bp UMI), 91bp read2 (transcript), and 8bp I7 sample barcode
+      run with --expect-cells=1000
 
 1.Download 10X single cell sequence fastq files
 ~~~
