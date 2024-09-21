@@ -467,7 +467,7 @@ The cellranger count pipeline outputs an interactive summary HTML file named web
  3.https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000329_TechnicalNote_InterpretingCellRangerWebSummaryFiles_RevA.pdf) 
 We can use IE,Firefox or google browser to open it.  
 <div align=center>
-   ![image](https://github.com/dzazy/Some-shit/blob/main/web_summary_fig1.png)
+   <img src="https://github.com/dzazy/Some-shit/blob/main/web_summary_fig1.png" width="180" height="105">
 </div>
 
 
